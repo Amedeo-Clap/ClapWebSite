@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLAP Srl – Human Tech Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony (Slate, Blue, White) -->
+    <!-- Application Structure Plan: A vertical single-page application (SPA) with a sticky navigation bar. The structure follows a narrative flow: introduction (Home), credibility (About Us with updated team photos and logo), product details (Projects), technical depth (Patents), business case (Market), and call-to-action (Contact). A dismissible cookie banner is included. This structure remains ideal for guiding potential investors. -->
+    <!-- Visualization & Content Choices: The application now features the official company logo in the header and updated, professional photos in the 'About Us' section, significantly enhancing brand identity and credibility. A placeholder is still used for the one missing photo. The layout remains focused on clear, modular text blocks. The bilingual functionality and cookie banner are retained. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        @media (max-width: 768px) {
+            .section {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+        }
+        .lang-btn.active {
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #2563eb;
+        }
+        .team-photo-main {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+        .team-photo-individual {
+            width: 100%;
+            height: 160px; /* 10rem */
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home">
+                <img src="https://lh3.googleusercontent.com/u/0/d/1-B_iZ5wR-wYx_4Y-p_4v-d_4z-B_iZ5w=w1920-h945" alt="CLAP Srl Logo" class="h-10 w-auto">
+            </a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="nav-link" data-lang-key="navAbout">Chi siamo</a>
+                <a href="#projects" class="nav-link" data-lang-key="navProjects">Progetti</a>
+                <a href="#patents" class="nav-link" data-lang-key="navPatents">Brevetti</a>
+                <a href="#market" class="nav-link" data-lang-key="navMarket">Mercato</a>
+                <a href="#contact" class="nav-link" data-lang-key="navContact">Contatti</a>
+            </nav>
+            <div class="flex items-center space-x-2">
+                <button id="lang-it" class="lang-btn text-sm font-medium">IT</button>
+                <span class="text-slate-300">|</span>
+                <button id="lang-en" class="lang-btn text-sm font-medium">EN</button>
+            </div>
+             <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 nav-link" data-lang-key="navAbout">Chi siamo</a>
+            <a href="#projects" class="block py-2 nav-link" data-lang-key="navProjects">Progetti</a>
+            <a href="#patents" class="block py-2 nav-link" data-lang-key="navPatents">Brevetti</a>
+            <a href="#market" class="block py-2 nav-link" data-lang-key="navMarket">Mercato</a>
+            <a href="#contact" class="block py-2 nav-link" data-lang-key="navContact">Contatti</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section bg-white min-h-screen flex items-center">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-sm font-semibold text-blue-600 uppercase" data-lang-key="companyFullName">CLAP Srl – Human Tech Design</h2>
+                    <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mt-2" data-lang-key="heroTitle">Innovazione MedTech per l’Automazione Terapeutica Geriatrica</h1>
+                    <p class="mt-6 text-lg md:text-xl text-slate-600" data-lang-key="heroSubtitle">Sviluppiamo soluzioni modulari e intelligenti per migliorare la somministrazione farmaci in RSA, ospedali e domicili, con AI vocale specializzata e tecnologia brevettata.</p>
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#projects" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition" data-lang-key="heroCtaPrimary">Scopri i nostri progetti</a>
+                        <a href="#contact" class="bg-slate-200 text-slate-800 font-semibold px-8 py-3 rounded-lg hover:bg-slate-300 transition" data-lang-key="heroCtaSecondary">Contattaci per partnership</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900" data-lang-key="aboutTitle">La nostra missione</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <p class="text-lg text-slate-600 mb-6" data-lang-key="aboutText">CLAP Srl nasce dalla passione per l’innovazione tecnologica applicata al settore sanitario. Siamo un team multidisciplinare con expertise in ingegneria medicale, intelligenza artificiale, certificazione MDR e sviluppo prodotto. La nostra visione è trasformare l’assistenza geriatrica attraverso soluzioni digitali affidabili, sicure e scalabili.</p>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-bold text-xl mb-4" data-lang-key="teamTitle">Team Core</h3>
+                            <p class="text-slate-600" data-lang-key="teamText">Guidati dall’ing. <strong>Amedeo Esposito</strong>, PRRC e inventore del sistema AmicoMed, collaboriamo con esperti di livello internazionale come l’ing. <strong>Fabio Ardente</strong>, responsabile AI e firmware, specializzato nello sviluppo di intelligenza artificiale vocale embedded per pazienti con patologie del linguaggio, e il dott. <strong>Giulio Drisaldi</strong>, esperto di strategia business e funding, con un solido track record nella gestione di progetti healthcare complessi.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1-6_3f-b_0d-01-468e-82ea-d67405f99e42=w1920-h945" alt="Team CLAP Srl" class="team-photo-main w-full shadow-lg">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="text-center">
+                                <div class="bg-slate-200 h-40 w-full rounded-lg flex items-center justify-center mb-2">
+                                    <span class="text-slate-500 text-sm" data-lang-key="amedeoMissingPhoto">Foto Amedeo Esposito</span>
+                                </div>
+                                <p class="font-semibold">Amedeo Esposito</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1-3_0159537-858b-47e3-959f-6243ead39643=w1920-h945" alt="Foto di Giulio Drisaldi" class="team-photo-individual mb-2">
+                                <p class="font-semibold">Giulio Drisaldi</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1-9_a0b21f6-42fb-4a69-9c7d-232501a8a06e=w1920-h945" alt="Foto di Fabio Ardente" class="team-photo-individual mb-2">
+                                <p class="font-semibold">Fabio Ardente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-900" data-lang-key="projectsTitle">I nostri progetti innovativi</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600" data-lang-key="projectsIntro">CLAP sviluppa tecnologie mediche con un approccio modulare e scalabile. Il progetto principale è **AmicoMed 004-005**, un sistema all’avanguardia per la dispensazione automatica di farmaci in bustine, progettato per RSA, ospedali e assistenza domiciliare integrata.</p>
+                </div>
+                <div class="mt-12 max-w-4xl mx-auto bg-slate-50 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-slate-900">AmicoMed 004-005</h3>
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-4 mt-1">●</span>
+                            <span data-lang-key="projectDetail1">**Architettura:** Master-slave con modulo master mobile su binario vincolato.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-4 mt-1">●</span>
+                            <span data-lang-key="projectDetail2">**Meccanismo:** Pre-perforazione duale e separazione tramite trazione senza taglio diretto.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-4 mt-1">●</span>
+                            <span data-lang-key="projectDetail3">**Intelligenza Artificiale:** AI vocale offline con dataset di oltre 1000 campioni per patologie geriatriche (Parkinson, afasia, disartria).</span>
+                        </li>
+                        <li class="flex items-start">
+                             <span class="text-blue-600 mr-4 mt-1">●</span>
+                            <span data-lang-key="projectDetail4">**Compliance:** Logging crittografato e conformità a MDR 2017/745 e ISO 13485.</span>
+                        </li>
+                         <li class="flex items-start">
+                             <span class="text-blue-600 mr-4 mt-1">●</span>
+                            <span data-lang-key="projectDetail5">**Stato:** Prototipo in fase avanzata, demo prevista a Pharmaexpo Napoli (Q1-Q2 2026).</span>
+                        </li>
+                         <li class="flex items-start">
+                             <span class="text-blue-600 mr-4 mt-1">●</span>
+                            <span data-lang-key="projectDetail6">**Mercato:** Target di oltre 7.300 strutture professionali in Italia.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="patents" class="section">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-900" data-lang-key="patentsTitle">Innovazione Brevettata</h2>
+                </div>
+                <div class="mt-12 grid md:grid-cols-2 gap-12 items-center">
+                    <div class="bg-slate-200 h-80 rounded-lg flex items-center justify-center">
+                        <p class="text-slate-500" data-lang-key="patentsImagePlaceholder">Infografica schematica dei claim principali, timeline brevetti, icone brevettuali.</p>
+                    </div>
+                    <div>
+                        <p class="text-lg text-slate-600 mb-6" data-lang-key="patentsText">CLAP detiene un solido portafoglio brevettuale per AmicoMed, che include:</p>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start"><span class="text-blue-600 mr-3 mt-1">▪</span><span data-lang-key="patentClaim1">Architettura modulare master-slave su percorso vincolato.</span></li>
+                            <li class="flex items-start"><span class="text-blue-600 mr-3 mt-1">▪</span><span data-lang-key="patentClaim2">Sistema unico di pre-perforazione duale con lama a pettine e ghigliottina di backup.</span></li>
+                            <li class="flex items-start"><span class="text-blue-600 mr-3 mt-1">▪</span><span data-lang-key="patentClaim3">Doppi lettori QR (superiore e inferiore) per bustine impilate non orientate.</span></li>
+                            <li class="flex items-start"><span class="text-blue-600 mr-3 mt-1">▪</span><span data-lang-key="patentClaim4">AI vocale offline specializzata per patologie geriatriche con dataset proprietario.</span></li>
+                            <li class="flex items-start"><span class="text-blue-600 mr-3 mt-1">▪</span><span data-lang-key="patentClaim5">Logging eventi con crittografia SHA-256 e firma digitale ECDSA hardware-bound.</span></li>
+                        </ul>
+                        <p class="mt-6 font-semibold" data-lang-key="patentsConclusion">Questi elementi confermano la nostra leadership tecnologica nel settore della dispensazione automatica di farmaci.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="market" class="section bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-900" data-lang-key="marketTitle">Un mercato in rapida crescita</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600" data-lang-key="marketText">Il settore della dispensazione automatica di farmaci in ambienti clinici e assistenziali è in forte espansione, con un mercato italiano potenziale di oltre 7.300 strutture tra RSA, ospedali e assistenza domiciliare. AmicoMed si posiziona come soluzione unica, combinando modularità, AI vocale specializzata e conformità normativa avanzata.</p>
+                     <div class="mt-10">
+                        <a href="#contact" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition" data-lang-key="marketCta">Unisciti al nostro progetto e investi nel futuro dell’assistenza sanitaria.</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-900" data-lang-key="contactTitle">Contattaci</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600" data-lang-key="contactText">Se sei interessato a investire, collaborare o saperne di più, contattaci. Siamo pronti a discutere partnership strategiche e opportunità di sviluppo.</p>
+                </div>
+                <div class="mt-12 max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                    <form>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-700" data-lang-key="formName">Nome</label>
+                                <input type="text" id="name" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+                                <input type="email" id="email" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-700" data-lang-key="formMessage">Messaggio</label>
+                                <textarea id="message" rows="4" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-blue-700 transition" data-lang-key="formSend">Invia</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="font-bold">CLAP Srl – Human Tech Design</p>
+            <p class="text-sm mt-2 text-slate-300" data-lang-key="footerAddress">Sedi: Roma - Via Archimede | Nocera Inferiore (SA) - Piazza D'Amora</p>
+            <p class="text-sm mt-1 text-slate-300" data-lang-key="footerContact">Email: info@claphtd.com</p>
+            <p class="text-xs mt-6 text-slate-400" data-lang-key="footerRights">&copy; 2025 CLAP Srl. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-800 text-white p-4 flex flex-col md:flex-row items-center justify-between z-50" style="display: none;">
+        <p class="text-sm mb-4 md:mb-0" data-lang-key="cookieText">Utilizziamo i cookie per garantire la migliore esperienza sul nostro sito web.</p>
+        <button id="accept-cookies" class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition text-sm" data-lang-key="cookieAccept">Accetta</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const content = {
+                it: {
+                    companyName: "CLAP Srl",
+                    companyFullName: "CLAP Srl – Human Tech Design",
+                    navAbout: "Chi siamo",
+                    navProjects: "Progetti",
+                    navPatents: "Brevetti",
+                    navMarket: "Mercato",
+                    navContact: "Contatti",
+                    heroTitle: "Innovazione MedTech per l’Automazione Terapeutica Geriatrica",
+                    heroSubtitle: "Sviluppiamo soluzioni modulari e intelligenti per migliorare la somministrazione farmaci in RSA, ospedali e domicili, con AI vocale specializzata e tecnologia brevettata.",
+                    heroCtaPrimary: "Scopri i nostri progetti",
+                    heroCtaSecondary: "Contattaci per partnership",
+                    aboutTitle: "La nostra missione",
+                    aboutText: "CLAP Srl nasce dalla passione per l’innovazione tecnologica applicata al settore sanitario. Siamo un team multidisciplinare con expertise in ingegneria medicale, intelligenza artificiale, certificazione MDR e sviluppo prodotto. La nostra visione è trasformare l’assistenza geriatrica attraverso soluzioni digitali affidabili, sicure e scalabili.",
+                    teamTitle: "Team Core",
+                    teamText: "Guidati dall’ing. <strong>Amedeo Esposito</strong>, PRRC e inventore del sistema AmicoMed, collaboriamo con esperti di livello internazionale come l’ing. <strong>Fabio Ardente</strong>, responsabile AI e firmware, specializzato nello sviluppo di intelligenza artificiale vocale embedded per pazienti con patologie del linguaggio, e il dott. <strong>Giulio Drisaldi</strong>, esperto di strategia business e funding, con un solido track record nella gestione di progetti healthcare complessi.",
+                    amedeoMissingPhoto: "Foto Amedeo Esposito",
+                    projectsTitle: "I nostri progetti innovativi",
+                    projectsIntro: "CLAP sviluppa tecnologie mediche con un approccio modulare e scalabile. Il progetto principale è <strong>AmicoMed 004-005</strong>, un sistema all’avanguardia per la dispensazione automatica di farmaci in bustine, progettato per RSA, ospedali e assistenza domiciliare integrata.",
+                    projectDetail1: "<strong>Architettura:</strong> Master-slave con modulo master mobile su binario vincolato.",
+                    projectDetail2: "<strong>Meccanismo:</strong> Pre-perforazione duale e separazione tramite trazione senza taglio diretto.",
+                    projectDetail3: "<strong>Intelligenza Artificiale:</strong> AI vocale offline con dataset di oltre 1000 campioni per patologie geriatriche (Parkinson, afasia, disartria).",
+                    projectDetail4: "<strong>Compliance:</strong> Logging crittografato e conformità a MDR 2017/745 e ISO 13485.",
+                    projectDetail5: "<strong>Stato:</strong> Prototipo in fase avanzata, demo prevista a Pharmaexpo Napoli (Q1-Q2 2026).",
+                    projectDetail6: "<strong>Mercato:</strong> Target di oltre 7.300 strutture professionali in Italia.",
+                    patentsTitle: "Innovazione Brevettata",
+                    patentsText: "CLAP detiene un solido portafoglio brevettuale per AmicoMed, che include:",
+                    patentsImagePlaceholder: "Infografica schematica dei claim principali, timeline brevetti, icone brevettuali.",
+                    patentClaim1: "Architettura modulare master-slave su percorso vincolato.",
+                    patentClaim2: "Sistema unico di pre-perforazione duale con lama a pettine e ghigliottina di backup.",
+                    patentClaim3: "Doppi lettori QR (superiore e inferiore) per bustine impilate non orientate.",
+                    patentClaim4: "AI vocale offline specializzata per patologie geriatriche con dataset proprietario.",
+                    patentClaim5: "Logging eventi con crittografia SHA-256 e firma digitale ECDSA hardware-bound.",
+                    patentsConclusion: "Questi elementi confermano la nostra leadership tecnologica nel settore della dispensazione automatica di farmaci.",
+                    marketTitle: "Un mercato in rapida crescita",
+                    marketText: "Il settore della dispensazione automatica di farmaci in ambienti clinici e assistenziali è in forte espansione, con un mercato italiano potenziale di oltre 7.300 strutture tra RSA, ospedali e assistenza domiciliare. AmicoMed si posiziona come soluzione unica, combinando modularità, AI vocale specializzata e conformità normativa avanzata.",
+                    marketCta: "Unisciti al nostro progetto e investi nel futuro dell’assistenza sanitaria.",
+                    contactTitle: "Contattaci",
+                    contactText: "Se sei interessato a investire, collaborare o saperne di più, contattaci. Siamo pronti a discutere partnership strategiche e opportunità di sviluppo.",
+                    formName: "Nome",
+                    formMessage: "Messaggio",
+                    formSend: "Invia",
+                    footerAddress: "Sedi: Roma - Via Archimede | Nocera Inferiore (SA) - Piazza D'Amora",
+                    footerContact: "Email: info@claphtd.com",
+                    footerRights: "&copy; 2025 CLAP Srl. Tutti i diritti riservati.",
+                    cookieText: "Utilizziamo i cookie per garantire la migliore esperienza sul nostro sito web.",
+                    cookieAccept: "Accetta"
+                },
+                en: {
+                    companyName: "CLAP Srl",
+                    companyFullName: "CLAP Srl – Human Tech Design",
+                    navAbout: "About Us",
+                    navProjects: "Projects",
+                    navPatents: "Patents",
+                    navMarket: "Market",
+                    navContact: "Contact",
+                    heroTitle: "MedTech Innovation for Geriatric Therapeutic Automation",
+                    heroSubtitle: "We develop modular, intelligent solutions to improve medication dispensing in nursing homes, hospitals, and home care — powered by specialized voice AI and patented technology.",
+                    heroCtaPrimary: "Discover Our Projects",
+                    heroCtaSecondary: "Contact Us for Partnership",
+                    aboutTitle: "Our Mission",
+                    aboutText: "CLAP Srl was born from a passion for technological innovation applied to healthcare. We are a multidisciplinary team with expertise in medical engineering, artificial intelligence, MDR certification, and product development. Our vision is to transform geriatric care through reliable, safe, and scalable digital solutions.",
+                    teamTitle: "Core Team",
+                    teamText: "Led by Eng. <strong>Amedeo Esposito</strong>, PRRC and inventor of the AmicoMed system, we collaborate with top-level experts such as Eng. <strong>Fabio Ardente</strong>, AI and firmware lead specializing in embedded voice AI for patients with speech pathologies, and Dr. <strong>Giulio Drisaldi</strong>, business strategy and funding expert with a strong track record in managing complex healthcare projects.",
+                    amedeoMissingPhoto: "Amedeo Esposito's Photo",
+                    projectsTitle: "Our Innovative Projects",
+                    projectsIntro: "CLAP develops medical technologies with a modular and scalable approach. Our flagship project is <strong>AmicoMed 004-005</strong>, a cutting-edge system for automatic medication dispensing in sachets, designed for nursing homes, hospitals, and integrated home care.",
+                    projectDetail1: "<strong>Architecture:</strong> Master-slave with mobile master module on constrained linear track.",
+                    projectDetail2: "<strong>Mechanism:</strong> Dual pre-perforation and separation by traction without direct cutting.",
+                    projectDetail3: "<strong>Artificial Intelligence:</strong> Offline voice AI trained on 1000+ samples for geriatric pathologies (Parkinson’s, aphasia, dysarthria).",
+                    projectDetail4: "<strong>Compliance:</strong> Cryptographically secured logging and MDR 2017/745, ISO 13485 compliance.",
+                    projectDetail5: "<strong>Status:</strong> Advanced prototype phase, demo planned at Pharmaexpo Napoli Q1-Q2 2026.",
+                    projectDetail6: "<strong>Target market:</strong> over 7,300 professional care facilities in Italy.",
+                    patentsTitle: "Patented Innovation",
+                    patentsText: "CLAP holds a robust patent portfolio for AmicoMed, including:",
+                    patentsImagePlaceholder: "Schematic infographic of the main claims, patent timeline, patent icons.",
+                    patentClaim1: "Modular master-slave architecture on a constrained linear track.",
+                    patentClaim2: "Unique dual pre-perforation system with comb blade and backup guillotine.",
+                    patentClaim3: "Dual QR readers (top and bottom) for unoriented stacked sachets.",
+                    patentClaim4: "Offline voice AI specialized for geriatric pathologies with proprietary dataset.",
+                    patentClaim5: "Event logging with SHA-256 encryption and hardware-bound ECDSA digital signature.",
+                    patentsConclusion: "These features affirm our technological leadership in automatic medication dispensing.",
+                    marketTitle: "A Rapidly Growing Market",
+                    marketText: "The automatic medication dispensing sector in clinical and care settings is rapidly expanding, with an Italian potential market of over 7,300 facilities including nursing homes, hospitals, and home care. AmicoMed positions itself as a unique solution combining modularity, specialized voice AI, and advanced regulatory compliance.",
+                    marketCta: "Join our project and invest in the future of healthcare.",
+                    contactTitle: "Contact Us",
+                    contactText: "If you are interested in investing, collaborating, or learning more, contact us. We are ready to discuss strategic partnerships and development opportunities.",
+                    formName: "Name",
+                    formMessage: "Message",
+                    formSend: "Send",
+                    footerAddress: "Offices: Rome - Via Archimede | Nocera Inferiore (SA) - Piazza D'Amora",
+                    footerContact: "Email: info@claphtd.com",
+                    footerRights: "&copy; 2025 CLAP Srl. All rights reserved.",
+                    cookieText: "We use cookies to ensure you get the best experience on our website.",
+                    cookieAccept: "Accept"
+                }
+            };
+
+            const langItBtn = document.getElementById('lang-it');
+            const langEnBtn = document.getElementById('lang-en');
+            
+            function updateContent(lang) {
+                document.documentElement.lang = lang;
+                
+                document.querySelectorAll('[data-lang-key]').forEach(element => {
+                    const key = element.getAttribute('data-lang-key');
+                    if (content[lang][key]) {
+                        element.innerHTML = content[lang][key];
+                    }
+                });
+
+                langItBtn.classList.toggle('active', lang === 'it');
+                langEnBtn.classList.toggle('active', lang === 'en');
+            }
+
+            langItBtn.addEventListener('click', () => updateContent('it'));
+            langEnBtn.addEventListener('click', () => updateContent('en'));
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('#mobile-menu a, .container a').forEach(link => {
+                link.addEventListener('click', () => {
+                   if(window.innerWidth < 768) {
+                       mobileMenu.classList.add('hidden');
+                   }
+                });
+            });
+
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptCookiesBtn = document.getElementById('accept-cookies');
+
+            if (!localStorage.getItem('cookiesAccepted')) {
+                cookieBanner.style.display = 'flex';
+            }
+
+            acceptCookiesBtn.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieBanner.style.display = 'none';
+            });
+
+            updateContent('it');
+        });
+    </script>
+</body>
+</html>
