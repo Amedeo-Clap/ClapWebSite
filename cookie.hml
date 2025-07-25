@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - CLAP Srl</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .content-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+        .content-section ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white/95 backdrop-blur-lg shadow-sm sticky top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html#home">
+                <img src="CLAP_logo_noback.png" alt="CLAP Srl Logo" class="h-14 w-auto">
+            </a>
+            <a href="index.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold" data-lang-key="backToHome">Torna alla Home</a>
+        </div>
+    </header>
+
+    <main class="py-20">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h1 class="text-4xl font-black text-slate-900 mb-8" data-lang-key="pageTitle">Cookie Policy</h1>
+            <div class="content-section bg-white p-8 rounded-lg shadow-md">
+                <p data-lang-key="lastUpdated"><strong>Ultimo aggiornamento:</strong> 26 Luglio 2025</p>
+                
+                <h2 data-lang-key="section1Title">1. Cosa sono i Cookie</h2>
+                <p data-lang-key="section1Text">[Contenuto legale da inserire. Spiegare cosa sono i cookie e a cosa servono in generale.]</p>
+
+                <h2 data-lang-key="section2Title">2. Tipi di Cookie Utilizzati</h2>
+                <p data-lang-key="section2Text">[Contenuto legale da inserire. Elencare le categorie di cookie utilizzate dal sito: tecnici, analitici, di profilazione, ecc. Per un sito "early stage", probabilmente si tratterà solo di cookie tecnici essenziali.]</p>
+
+                <h2 data-lang-key="section3Title">3. Gestione dei Cookie</h2>
+                <p data-lang-key="section3Text">[Contenuto legale da inserire. Spiegare come l'utente può gestire le preferenze sui cookie tramite le impostazioni del proprio browser (fornire link alle guide per i browser più comuni).]</p>
+
+                <p class="mt-8" data-lang-key="contactInfo">Per qualsiasi domanda relativa a questa cookie policy, puoi contattarci a: <a href="mailto:info@claphtd.com" class="text-blue-600 hover:underline">info@claphtd.com</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <a href="index.html#home">
+                <img src="CLAP_logo_noback.png" alt="CLAP Srl Logo" class="h-12 w-auto mx-auto mb-4 bg-white rounded-md p-1">
+            </a>
+            <p class="mb-4" data-lang-key="footerSlogan">CLAP Srl - Human Tech Design</p>
+            <p class="text-sm mb-4" data-lang-key="footerAddress">Roma - Via Archimede | Nocera Inferiore (SA) - Piazza D'Amora</p>
+            <p class="text-sm mb-6" data-lang-key="footerEmail">info@claphtd.com</p>
+            <p class="text-xs" data-lang-key="footerRights">&copy; 2025 CLAP Srl. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Placeholder for future language switching if needed on this page
+    </script>
+
+</body>
+</html>
