@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech4Engagement – L’intelligenza che coinvolge | CLAP Srl</title>
+    
+    <meta name="description" content="Scopri il nostro framework Tech4Engagement: l'evoluzione dalla Gamification alla Persuasive AI per creare coinvolgimento reale in ambito MedTech.">
+    <meta name="keywords" content="Tech4Engagement, Persuasive AI, Gamification, Behavioral Design, Intelligenza Artificiale, MedTech, AmicoMed, CLAP Srl">
+    <meta property="og:title" content="Tech4Engagement – L’intelligenza che coinvolge | CLAP Srl">
+    <meta property="og:description" content="Dal badge al comportamento. Dalla UX all’empatia. Esplora il nostro approccio all'engagement in ambito sanitario.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0f172a/ffffff?text=Tech4Engagement"> 
+    <meta property="og:url" content="https://www.claphtd.com/tech4engagement.html">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+        .tech-card {
+            transition: all 0.3s ease;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .lang-btn.active {
+            font-weight: 700;
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+        .framework-arrow {
+            position: absolute;
+            top: 50%;
+            left: -40px;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            font-size: 2rem;
+            font-weight: 200;
+        }
+        @media (max-width: 767px) {
+            .framework-arrow {
+                top: -30px;
+                left: 50%;
+                transform: translateX(-50%) rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white/95 backdrop-blur-lg shadow-sm sticky top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+            <a href="index.html">
+                <img src="CLAP_logo_noback.png" alt="CLAP Srl Logo" class="h-20 w-auto">
+            </a>
+            <a href="index.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold">Torna al Sito Principale</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-gradient pt-32 pb-20 text-white relative">
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">Tech4Engagement</h1>
+                    <p class="text-2xl md:text-3xl font-bold text-slate-300 mb-12" data-lang-key="heroSubtitle">L’intelligenza che coinvolge.<br>Dal badge al comportamento. Dalla UX all’empatia.</p>
+                    <a href="#framework" class="bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-slate-100 transition shadow-lg text-lg" data-lang-key="heroCta">Scopri il framework</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="origin" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl font-black text-slate-900 mb-6" data-lang-key="originTitle">Da dove nasce</h2>
+                        <p class="text-lg text-slate-600 mb-4" data-lang-key="originText1">Il nostro viaggio nell'engagement è iniziato nel 2015 con **SalesRun**, una tesi che esplorava la gamification per motivare le reti vendita. Questo progetto ha posto le basi della nostra comprensione dei meccanismi motivazionali.</p>
+                        <p class="text-lg text-slate-600" data-lang-key="originText2">Oggi, quell'esperienza si è evoluta. Siamo passati dalla semplice applicazione di elementi di gioco a un approccio più profondo e scientifico: il **design AI-driven**, dove l'intelligenza artificiale non solo coinvolge, ma comprende, si adatta ed empatizza con l'utente.</p>
+                    </div>
+                    <div class="bg-slate-100 h-80 rounded-xl flex items-center justify-center">
+                         <img src="https://placehold.co/600x400/e2e8f0/94a3b8?text=Da+Gamification+a+AI" alt="Diagramma evoluzione da Gamification a AI" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="framework" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6" data-lang-key="frameworkTitle">Il Framework Tech4Engagement</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto" data-lang-key="frameworkSubtitle">L'engagement oggi non è più solo una questione di punti e classifiche. È la creazione di un'esperienza significativa che guida a un cambiamento comportamentale sostenibile, basato su solide fondamenta scientifiche.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-16">
+                    <div class="tech-card bg-white p-8 rounded-2xl border border-slate-200 relative"><h3 class="text-2xl font-bold text-slate-900 mb-4" data-lang-key="concept1Title">1. Gamification</h3><p class="text-slate-600 text-sm" data-lang-key="concept1Desc">Utilizzo di elementi di gioco (punti, badge, classifiche) per aumentare la motivazione estrinseca. Efficace per compiti a breve termine, ma con limiti sulla sostenibilità a lungo termine (es. Octalysis Framework).</p></div>
+                    <div class="tech-card bg-white p-8 rounded-2xl border border-slate-200 relative"><div class="framework-arrow">&rarr;</div><h3 class="text-2xl font-bold text-slate-900 mb-4" data-lang-key="concept2Title">2. Persuasive Tech</h3><p class="text-slate-600 text-sm" data-lang-key="concept2Desc">Tecnologia progettata per influenzare il comportamento attraverso la persuasione e l'influenza sociale, senza coercizione. Si basa su modelli come il Fogg Behavior Model (Trigger, Motivation, Ability).</p></div>
+                    <div class="tech-card bg-white p-8 rounded-2xl border border-blue-300 ring-2 ring-blue-100 relative"><div class="framework-arrow">&rarr;</div><h3 class="text-2xl font-bold text-blue-800 mb-4" data-lang-key="concept3Title">3. Behavioral AI</h3><p class="text-slate-600 text-sm" data-lang-key="concept3Desc">**Il nostro approccio.** Unisce l'AI con framework scientificamente validati come **COM-B** e **BCD**. L'AI personalizza dinamicamente gli interventi (nudging), adattandosi al contesto e ai bisogni psicologici dell'utente per un engagement profondo e duraturo.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="applications" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6" data-lang-key="appsTitle">Applicazioni Reali</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-slate-50 p-8 rounded-xl">
+                        <div class="mb-4"><img src="https://placehold.co/600x400/dbeafe/1e3a8a?text=AmicoMed" alt="AmicoMed" class="h-48 w-full object-cover rounded-lg"></div>
+                        <h3 class="text-2xl font-bold mb-3" data-lang-key="app1Title">AmicoMed: Pill Dispenser con AI Emozionale</h3>
+                        <p class="text-slate-600" data-lang-key="app1Desc">L'assistente vocale di AmicoMed non si limita a ricordare di prendere un farmaco. Analizza il tono della voce e il contesto ambientale per adattare la comunicazione, offrendo un "nudge" gentile o un reminder più assertivo, migliorando l'aderenza terapeutica in pazienti anziani.</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-xl">
+                        <div class="mb-4"><img src="https://placehold.co/600x400/dcfce7/166534?text=EAR+Robot" alt="EAR" class="h-48 w-full object-cover rounded-lg"></div>
+                        <h3 class="text-2xl font-bold mb-3" data-lang-key="app2Title">EAR: Robot Umanoide Empatico</h3>
+                        <p class="text-slate-600" data-lang-key="app2Desc">EAR (Empathetic AI Robot) è progettato per interazioni personalizzate in contesti riabilitativi. Utilizzando il framework COM-B, l'AI identifica le barriere del paziente (es. scarsa motivazione, difficoltà fisiche) e adatta le attività e il dialogo per massimizzare l'engagement e il recupero.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="series" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-black text-slate-900 mb-6" data-lang-key="seriesTitle">La serie #Tech4Engagement</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto" data-lang-key="seriesSubtitle">Abbiamo approfondito questi temi in una serie di post su LinkedIn. Scegli la lingua e leggi i nostri approfondimenti.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+                    <div class="flex justify-center mb-6 border-b border-slate-200">
+                        <button class="lang-btn px-4 py-2 font-semibold active" data-lang="it">Italiano</button>
+                        <button class="lang-btn px-4 py-2 font-semibold" data-lang="en">English</button>
+                        <button class="lang-btn px-4 py-2 font-semibold" data-lang="es">Español</button>
+                    </div>
+                    <div id="posts-container" class="prose max-w-none">
+                        </div>
+                    <div class="text-center mt-8">
+                        <a href="Clap_Tech4Engagement_Series.pdf" download class="bg-blue-600 text-white font-bold px-8 py-3 rounded-xl hover:bg-blue-700 transition" data-lang-key="downloadPdf">Scarica la serie completa (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 tech-gradient text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-black mb-4" data-lang-key="contactTitle">Sei una RSA, un investitore o un partner tech?</h2>
+                <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto" data-lang-key="contactSubtitle">Siamo sempre aperti a collaborazioni per testare, sviluppare e integrare le nostre tecnologie. Parliamone.</p>
+                <a href="mailto:info@claphtd.com" class="bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-slate-100 transition shadow-lg text-lg" data-lang-key="contactCta">Contattaci</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <a href="index.html">
+               <img src="CLAP_logo_noback.png" alt="CLAP Srl Logo" class="h-16 w-auto mb-4 mx-auto bg-white rounded-md p-1">
+            </a>
+            <p class="text-sm">Human Tech Design</p>
+            <p class="mt-8 text-xs">&copy; 2025 CLAP Srl. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const posts = {
+                it: `
+                    <h4>Post 1: Oltre la Gamification</h4>
+                    <p>Per anni, la gamification ha dominato la scena dell'engagement. Ma è abbastanza? Scopri perché l'evoluzione verso la Behavioral AI è cruciale per risultati duraturi, specialmente in ambito sanitario.</p>
+                    <h4>Post 2: Il Potere del Contesto</h4>
+                    <p>Un reminder non è uguale per tutti. La nostra Persuasive AI analizza l'ambiente e lo stato emotivo per fornire il "nudge" giusto al momento giusto. Non si tratta di convincere, ma di comprendere.</p>
+                    <h4>Post 3: Etica e Trasparenza</h4>
+                    <p>La tecnologia persuasiva deve essere etica. Il nostro approccio è "glass box": algoritmi comprensibili e controllo nelle mani dell'utente, sempre. L'obiettivo è l'empowerment, non la manipolazione.</p>
+                    <h4>Post 4: Misurare ciò che conta</h4>
+                    <p>Le metriche di vanità (like, punti) non bastano. Con Tech4Engagement, misuriamo l'impatto reale: aderenza terapeutica, riduzione degli errori, miglioramento della qualità della vita. Questi sono i KPI che guidano la nostra innovazione.</p>
+                `,
+                en: `
+                    <h4>Post 1: Beyond Gamification</h4>
+                    <p>For years, gamification has dominated the engagement scene. But is it enough? Discover why the evolution towards Behavioral AI is crucial for lasting results, especially in healthcare.</p>
+                    <h4>Post 2: The Power of Context</h4>
+                    <p>One reminder does not fit all. Our Persuasive AI analyzes the environment and emotional state to provide the right nudge at the right time. It's not about convincing, but about understanding.</p>
+                    <h4>Post 3: Ethics and Transparency</h4>
+                    <p>Persuasive technology must be ethical. Our approach is "glass box": understandable algorithms and user control, always. The goal is empowerment, not manipulation.</p>
+                    <h4>Post 4: Measuring What Matters</h4>
+                    <p>Vanity metrics (likes, points) are not enough. With Tech4Engagement, we measure real impact: therapeutic adherence, error reduction, improved quality of life. These are the KPIs that drive our innovation.</p>
+                `,
+                es: `
+                    <h4>Post 1: Más allá de la Gamificación</h4>
+                    <p>Durante años, la gamificación ha dominado la escena del engagement. ¿Pero es suficiente? Descubre por qué la evolución hacia la IA Conductual es crucial para resultados duraderos, especialmente en el sector de la salud.</p>
+                    <h4>Post 2: El Poder del Contexto</h4>
+                    <p>Un recordatorio no es igual para todos. Nuestra IA Persuasiva analiza el entorno y el estado emocional para dar el empujón correcto en el momento adecuado. No se trata de convencer, sino de comprender.</p>
+                    <h4>Post 3: Ética y Transparencia</h4>
+                    <p>La tecnología persuasiva debe ser ética. Nuestro enfoque es de "caja de cristal": algoritmos comprensibles y el control en manos del usuario, siempre. El objetivo es el empoderamiento, no la manipulación.</p>
+                    <h4>Post 4: Medir lo que importa</h4>
+                    <p>Las métricas de vanidad (likes, puntos) no son suficientes. Con Tech4Engagement, medimos el impacto real: adherencia terapéutica, reducción de errores, mejora de la calidad de vida. Estos son los KPIs que impulsan nuestra innovación.</p>
+                `
+            };
+
+            const postsContainer = document.getElementById('posts-container');
+            const langButtons = document.querySelectorAll('.lang-btn');
+
+            function renderPosts(lang) {
+                postsContainer.innerHTML = posts[lang];
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+            }
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    renderPosts(btn.dataset.lang);
+                });
+            });
+
+            // Initial render
+            renderPosts('it');
+
+        });
+    </script>
+</body>
+</html>
