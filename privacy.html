@@ -16,100 +16,167 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-         #logoClap {
-            width: 250px;
-            height: auto;
         body {
             font-family: 'Inter', sans-serif;
         }
         .content-section h2 {
             font-size: 1.5rem;
             font-weight: 700;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
         }
-        .content-section p {
+        .content-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .content-section p, .content-section ul {
             margin-bottom: 1rem;
             line-height: 1.75;
+            color: #4b5563;
         }
         .content-section ul {
             list-style-type: disc;
             padding-left: 1.5rem;
-            margin-bottom: 1rem;
         }
         .lang-btn.active {
             font-weight: 700;
             color: #2563eb;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f9fafb;
+            font-weight: 600;
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
     <header class="bg-white/95 backdrop-blur-lg shadow-sm sticky top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
             <a href="index.html">
-                <img src="CLAP_logo_noback.png" alt="CLAP Srl Logo" id="logoClap">
+                <img src="CLAP_logo_noback.png" alt="CLAP Srl Logo" class="h-20 w-auto">
             </a>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="index.html#about" class="hover:text-blue-600 transition" data-lang-key="navAbout">Chi siamo</a>
-                <a href="index.html#technology" class="hover:text-blue-600 transition" data-lang-key="navTechnology">Tecnologia</a>
-                <a href="index.html#market" class="hover:text-blue-600 transition" data-lang-key="navMarket">Mercato</a>
-            </nav>
-            <a href="index.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold" data-lang-key="backToHome">Torna alla Home</a>
+            <div class="flex items-center space-x-4">
+                <div class="hidden md:flex items-center space-x-2">
+                    <button id="lang-it" class="lang-btn text-sm font-medium px-2 py-1">IT</button>
+                    <span class="text-slate-300">|</span>
+                    <button id="lang-en" class="lang-btn text-sm font-medium px-2 py-1">EN</button>
+                </div>
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold" data-lang-key="backToHome">Torna alla Home</a>
+            </div>
         </div>
     </header>
 
     <main class="py-20">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h1 class="text-4xl font-black text-slate-900 mb-8" data-lang-key="pageTitle">Privacy Policy</h1>
-            <div class="content-section bg-white p-8 rounded-lg shadow-md">
-                <p data-lang-key="lastUpdated"><strong>Ultimo aggiornamento:</strong> 26 Luglio 2025</p>
-                
-                <h2 data-lang-key="section1Title">1. Titolare del Trattamento</h2>
-                <p data-lang-key="section1Text">[Contenuto legale da inserire. Descrivere chi è il titolare del trattamento dei dati, ad es. CLAP Srl, con i relativi dati di contatto.]</p>
-
-                <h2 data-lang-key="section2Title">2. Tipi di Dati Raccolti</h2>
-                <p data-lang-key="section2Text">[Contenuto legale da inserire. Elencare i tipi di dati personali raccolti, come dati di navigazione, dati forniti volontariamente dall'utente (es. tramite form di contatto), cookie, ecc.]</p>
-
-                <h2 data-lang-key="section3Title">3. Finalità del Trattamento</h2>
-                <p data-lang-key="section3Text">[Contenuto legale da inserire. Spiegare perché i dati vengono raccolti, ad esempio per rispondere a richieste di contatto, per l'invio di newsletter, per analisi statistiche, ecc.]</p>
-
-                <h2 data-lang-key="section4Title">4. Diritti dell'Interessato</h2>
-                <p data-lang-key="section4Text">[Contenuto legale da inserire. Descrivere i diritti degli utenti secondo il GDPR, come il diritto di accesso, rettifica, cancellazione (oblio), limitazione del trattamento, portabilità dei dati e opposizione.]</p>
-
-                <p class="mt-8" data-lang-key="contactInfo">Per qualsiasi domanda relativa a questa privacy policy, puoi contattarci a: <a href="mailto:info@claphtd.com" class="text-blue-600 hover:underline">info@claphtd.com</a></p>
+            <h1 class="text-4xl font-black text-slate-900 mb-8" data-lang-key="pageTitle">Informativa sul Trattamento dei Dati Personali</h1>
+            <div id="privacy-content" class="content-section bg-white p-8 rounded-lg shadow-md">
+                <!-- Content will be injected by JavaScript -->
             </div>
         </div>
     </main>
 
-    <footer class="bg-slate-950 text-slate-400 py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
-                <div>
-                    <a href="index.html">
-                       <img src="CLAP_logo_noback.png" alt="CLAP Srl Logo" class="h-12 w-auto mb-4 mx-auto md:mx-0 bg-white rounded-md p-1">
-                    </a>
-                    <p class="text-sm" data-lang-key="footerSlogan2">Human Tech Design</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white mb-4" data-lang-key="newsletterTitle">Rimani aggiornato</h4>
-                    <form class="flex"><input type="email" placeholder="latua@email.com" class="w-full bg-slate-800 text-white px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"><button type="submit" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-r-md hover:bg-blue-700" data-lang-key="newsletterButton">Iscriviti</button></form>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white mb-4" data-lang-key="followUs">Seguici</h4>
-                    <div class="flex justify-center md:justify-start space-x-6">
-                        <a href="https://www.linkedin.com/company/clap-htd" target="_blank" class="hover:text-white transition" data-lang-key="socialLinkedIn">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-12 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-                <p class="mb-4 md:mb-0" data-lang-key="footerRights">&copy; 2025 CLAP Srl. Tutti i diritti riservati.</p>
-                <div class="space-x-4">
-                    <a href="privacy.html" class="hover:text-white transition" data-lang-key="privacyPolicyLink">Privacy Policy</a>
-                    <a href="cookie.html" class="hover:text-white transition" data-lang-key="cookiePolicyLink">Cookie Policy</a>
-                </div>
-            </div>
+    <footer class="bg-slate-950 text-slate-400 py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <a href="index.html">
+               <img src="CLAP_logo_noback.png" alt="CLAP Srl Logo" class="h-20 w-auto mb-4 mx-auto bg-white rounded-md p-1">
+            </a>
+            <p class="text-sm" data-lang-key="footerSlogan2">Human Tech Design</p>
+            <p class="mt-8 text-xs" data-lang-key="footerRights">&copy; 2025 CLAP Srl. Tutti i diritti riservati.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = {
+                it: {
+                    backToHome: "Torna alla Home",
+                    pageTitle: "Informativa sul Trattamento dei Dati Personali",
+                    privacyPolicyHTML: `
+                        <p><strong>Ultimo aggiornamento:</strong> [Data]</p>
+                        <h2>1. TITOLARE DEL TRATTAMENTO</h2>
+                        <p><strong>CLAP Srl</strong><br>Sede legale: Piazza D'amora - Nocera Inferiore (SA)<br>Partita IVA: [P.IVA]<br>Email: privacy@claphtd.com<br></p>
+                        <p><strong>Responsabile della Protezione dei Dati:</strong><br>Avv. Basile Salvatore<br>Email: dpo@claphtd.com</p>
+                        
+                        <h2>2. NATURA E TIPOLOGIE DI DATI TRATTATI</h2>
+                        <h3>2.1 Dati Raccolti tramite Sito Web</h3>
+                        <p><strong>Dati di navigazione tecnici:</strong> IP address, user agent, sistema operativo, pagine visitate, durata sessioni, sorgenti di traffico, preferenze linguistiche, geolocalizzazione approssimativa.</p>
+                        <p><strong>Dati forniti dall'utente:</strong> Dati anagrafici e di contatto (nome, email, telefono), informazioni professionali, interesse commerciale manifestato, comunicazioni inviate tramite form.</p>
+                        <h3>2.2 Dati del Dispositivo AmicoMed (Fase Pre-Commerciale)</h3>
+                        <p><strong>Stato attuale:</strong> CLAP è in fase di sviluppo pre-commerciale. Il dispositivo AmicoMed non è ancora operativo in strutture sanitarie.</p>
+                        <p><strong>Dati futuri previsti:</strong> Identificativi tecnici dei pazienti (pseudonimizzati), parametri di erogazione terapeutica, dati di interazione con interfaccia vocale e touch, log di funzionamento, metriche di compliance terapeutica.</p>
+                        <p><strong>Principio di separazione:</strong> I sistemi informativi del sito web e del dispositivo medico operano in completa autonomia senza condivisione di dati.</p>
+
+                        <h2>3. FINALITÀ E BASI GIURIDICHE</h2>
+                        <h3>3.1 Trattamenti Relativi al Sito Web</h3>
+                        <table><thead><tr><th>Finalità</th><th>Base Giuridica GDPR</th><th>Periodo di Conservazione</th></tr></thead><tbody><tr><td>Gestione richieste commerciali</td><td>Consenso (art. 6.1.a)</td><td>24 mesi</td></tr><tr><td>Analisi statistiche traffico</td><td>Interesse legittimo (art. 6.1.f)</td><td>14 mesi</td></tr><tr><td>Marketing B2B qualificato</td><td>Interesse legittimo (art. 6.1.f)</td><td>36 mesi</td></tr><tr><td>Sicurezza informatica</td><td>Interesse legittimo (art. 6.1.f)</td><td>6 mesi</td></tr><tr><td>Adempimenti contrattuali</td><td>Esecuzione contratto (art. 6.1.b)</td><td>Durata rapporto + 10 anni</td></tr></tbody></table>
+                        
+                        <h2>4. DIRITTI DELL'INTERESSATO</h2>
+                        <p>Gli interessati possono esercitare i diritti secondo gli artt. 15-22 GDPR: accesso, rettifica, cancellazione, limitazione, portabilità, opposizione. Le richieste possono essere inviate a privacy@claphtd.com.</p>
+                    `
+                },
+                en: {
+                    backToHome: "Back to Main Site",
+                    pageTitle: "Privacy Policy",
+                    privacyPolicyHTML: `
+                        <p><strong>Last updated:</strong> [Date]</p>
+                        <h2>1. DATA CONTROLLER</h2>
+                        <p><strong>CLAP Srl</strong><br>Registered office: [Complete address]<br>VAT number: [VAT ID]<br>Email: privacy@claphtd.com<br>Phone: [Number]</p>
+                        <p><strong>Data Protection Officer:</strong><br>Avv. Basile Salvatore<br>Email: dpo@claphtd.com</p>
+                        
+                        <h2>2. NATURE AND TYPES OF DATA PROCESSED</h2>
+                        <h3>2.1 Data Collected via Website</h3>
+                        <p><strong>Technical navigation data:</strong> IP address, user agent, operating system, pages visited, session duration, traffic sources, language preferences, approximate geolocation data.</p>
+                        <p><strong>User-provided data:</strong> Personal and contact information (name, email, phone), professional information, commercial interest expressed, communications sent via contact forms.</p>
+                        <h3>2.2 AmicoMed Device Data (Pre-Commercial Phase)</h3>
+                        <p><strong>Current status:</strong> CLAP is in pre-commercial development phase. The AmicoMed device is not yet operational in healthcare facilities.</p>
+                        <p><strong>Future planned data:</strong> Technical patient identifiers (pseudonymized), therapeutic delivery parameters, voice and touch interface interaction data, device operation and diagnostic logs, therapeutic compliance metrics.</p>
+                        <p><strong>Separation principle:</strong> Website and medical device information systems operate in complete autonomy without data sharing.</p>
+
+                        <h2>3. PURPOSES AND LEGAL BASES</h2>
+                        <h3>3.1 Website-Related Processing</h3>
+                        <table><thead><tr><th>Purpose</th><th>GDPR Legal Basis</th><th>Retention Period</th></tr></thead><tbody><tr><td>Commercial inquiry management</td><td>Consent (art. 6.1.a)</td><td>24 months</td></tr><tr><td>Traffic statistical analysis</td><td>Legitimate interest (art. 6.1.f)</td><td>14 months</td></tr><tr><td>Qualified B2B marketing</td><td>Legitimate interest (art. 6.1.f)</td><td>36 months</td></tr><tr><td>IT security</td><td>Legitimate interest (art. 6.1.f)</td><td>6 months</td></tr><tr><td>Contractual fulfillment</td><td>Contract performance (art. 6.1.b)</td><td>Relationship duration + 10 years</td></tr></tbody></table>
+
+                        <h2>4. DATA SUBJECT RIGHTS</h2>
+                        <p>Data subjects may exercise their rights according to arts. 15-22 GDPR: access, rectification, erasure, restriction, portability, objection. Requests can be sent to privacy@claphtd.com.</p>
+                    `
+                }
+            };
+
+            const langItBtn = document.getElementById('lang-it');
+            const langEnBtn = document.getElementById('lang-en');
+            const privacyContentDiv = document.getElementById('privacy-content');
+
+            function updateContent(lang) {
+                document.documentElement.lang = lang;
+                document.querySelector('[data-lang-key="backToHome"]').innerHTML = content[lang].backToHome;
+                document.querySelector('[data-lang-key="pageTitle"]').innerHTML = content[lang].pageTitle;
+                privacyContentDiv.innerHTML = content[lang].privacyPolicyHTML;
+                langItBtn.classList.toggle('active', lang === 'it');
+                langEnBtn.classList.toggle('active', lang === 'en');
+            }
+
+            langItBtn.addEventListener('click', () => updateContent('it'));
+            langEnBtn.addEventListener('click', () => updateContent('en'));
+
+            // Initial load
+            updateContent('it');
+        });
+    </script>
+
 </body>
 </html>
