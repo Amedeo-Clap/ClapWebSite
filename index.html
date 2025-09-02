@@ -42,6 +42,7 @@
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); }
+        .tech-gradient { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%); }
         .tech-card { transition: all 0.3s ease; }
         .tech-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
         .floating-cta { position: fixed; bottom: 20px; right: 20px; z-index: 1000; animation: pulse 2s infinite; }
@@ -70,6 +71,8 @@
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#solution" class="hover:text-blue-600 transition" data-lang-key="navSolution">La Soluzione</a>
                 <a href="#technology" class="hover:text-blue-600 transition" data-lang-key="navTechnology">Tecnologia</a>
+                <a href="#market" class="hover:text-blue-600 transition" data-lang-key="navMarket">Mercato</a>
+                <a href="#insights" class="hover:text-blue-600 transition" data-lang-key="navInsights">Approfondimenti</a>
                 <a href="#about" class="hover:text-blue-600 transition" data-lang-key="navAbout">Chi siamo</a>
             </nav>
             <div class="flex items-center">
@@ -87,6 +90,8 @@
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#solution" class="block py-2 hover:text-blue-600 transition" data-lang-key="navSolution">La Soluzione</a>
             <a href="#technology" class="block py-2 hover:text-blue-600 transition" data-lang-key="navTechnology">Tecnologia</a>
+            <a href="#market" class="block py-2 hover:text-blue-600 transition" data-lang-key="navMarket">Mercato</a>
+            <a href="#insights" class="block py-2 hover:text-blue-600 transition" data-lang-key="navInsights">Approfondimenti</a>
             <a href="#about" class="block py-2 hover:text-blue-600 transition" data-lang-key="navAbout">Chi siamo</a>
             <a href="#contact" class="block mt-4 bg-blue-600 text-white text-center px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold" data-lang-key="navContact">Contatti</a>
             <div class="flex items-center justify-center space-x-2 mt-4 pt-4 border-t border-slate-200">
@@ -158,6 +163,33 @@
                         <p class="text-slate-600 mb-6 flex-grow" data-lang-key="softwareDesc">Il nostro vero "moat". Un'AI addestrata su un **dataset vocale proprietario di oltre 1.000 ore** per comprendere pazienti con Parkinson, afasia e disartria. Garantisce interazioni affidabili e un monitoraggio proattivo che i modelli generici non possono eguagliare.</p>
                         <img src="https://placehold.co/600x400/e9d5ff/5b21b6?text=AI+Environment" alt="Piattaforma Software AI Environment" class="w-full h-auto object-cover rounded-xl mt-auto">
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="market" class="py-20 tech-gradient text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6" data-lang-key="marketTitle">Mercato Italiano Validato</h2>
+                    <p class="text-xl text-blue-100 max-w-3xl mx-auto" data-lang-key="marketSubtitle">Oltre 7.300 strutture professionali in Italia rappresentano il nostro mercato target, con un potenziale di adozione significativo data la bassa automazione attuale.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20"><h3 class="text-xl font-bold mb-4" data-lang-key="segment1Title">🏥 RSA</h3><div class="space-y-2 text-sm"><div class="flex justify-between"><span data-lang-key="segment1_1_label">Strutture:</span><span class="font-bold" data-lang-key="segment1_1_val">4.629</span></div><div class="flex justify-between"><span data-lang-key="segment1_2_label">Posti letto:</span><span class="font-bold" data-lang-key="segment1_2_val">319.000</span></div><div class="flex justify-between"><span data-lang-key="segment1_3_label">Automatizzate:</span><span class="font-bold text-red-300" data-lang-key="segment1_3_val">~12%</span></div></div></div>
+                    <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20"><h3 class="text-xl font-bold mb-4" data-lang-key="segment2Title">🏥 Ospedali</h3><div class="space-y-2 text-sm"><div class="flex justify-between"><span data-lang-key="segment2_1_label">Geriatria:</span><span class="font-bold" data-lang-key="segment2_1_val">93 reparti</span></div><div class="flex justify-between"><span data-lang-key="segment2_2_label">Lungodegenza:</span><span class="font-bold" data-lang-key="segment2_2_val">120 unità</span></div><div class="flex justify-between"><span data-lang-key="segment2_3_label">AI Integration:</span><span class="font-bold text-red-300" data-lang-key="segment2_3_val">&lt;10%</span></div></div></div>
+                    <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20"><h3 class="text-xl font-bold mb-4" data-lang-key="segment3Title">🏠 Hospice</h3><div class="space-y-2 text-sm"><div class="flex justify-between"><span data-lang-key="segment3_1_label">Strutture:</span><span class="font-bold" data-lang-key="segment3_1_val">307</span></div><div class="flex justify-between"><span data-lang-key="segment3_2_label">Posti letto:</span><span class="font-bold" data-lang-key="segment3_2_val">2.524</span></div><div class="flex justify-between"><span data-lang-key="segment3_3_label">Automatizzazione:</span><span class="font-bold text-red-300" data-lang-key="segment3_3_val">~0%</span></div></div></div>
+                    <div class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl border border-white/20"><h3 class="text-xl font-bold mb-4" data-lang-key="segment4Title">🧠 Neuroriab.</h3><div class="space-y-2 text-sm"><div class="flex justify-between"><span data-lang-key="segment4_1_label">Centri cod.75:</span><span class="font-bold" data-lang-key="segment4_1_val">72</span></div><div class="flex justify-between"><span data-lang-key="segment4_2_label">Posti letto:</span><span class="font-bold" data-lang-key="segment4_2_val">1.200</span></div><div class="flex justify-between"><span data-lang-key="segment4_3_label">Automatizzazione:</span><span class="font-bold text-red-300" data-lang-key="segment4_3_val">&lt;5%</span></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="insights" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-black text-slate-900 mb-6" data-lang-key="insightsTitle">Approfondimenti</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-12" data-lang-key="insightsSubtitle">Esplora la nostra visione sull'evoluzione dell'engagement, dalla gamification all'intelligenza artificiale.</p>
+                <div class="max-w-2xl mx-auto bg-slate-50 rounded-2xl shadow-lg p-8 text-left">
+                    <h3 class="text-2xl font-bold mb-4" data-lang-key="articleTeaserTitle">From Gamification to Cognitive Engagement: A 10-Year Journey</h3>
+                    <p class="text-slate-600 mb-6" data-lang-key="articleTeaserText">Nel 2016, un esperimento pionieristico. Oggi, un nuovo paradigma per l'engagement in ambito health-tech. Scopri il nostro percorso e la nostra visione.</p>
+                    <a href="#" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition" data-lang-key="articleReadMore">Leggi l'articolo</a>
                 </div>
             </div>
         </section>
@@ -245,6 +277,8 @@
                     floatingCta: "Richiedi una Demo",
                     navSolution: "La Soluzione",
                     navTechnology: "Tecnologia",
+                    navMarket: "Mercato",
+                    navInsights: "Approfondimenti",
                     navAbout: "Chi siamo",
                     navContact: "Contatti",
                     heroTitle: "Gestione della Terapia: Rischio Zero, Massima Sicurezza.",
@@ -269,6 +303,17 @@
                     softwarePlatform: "AI ENVIRONMENT",
                     softwareTitle: "AI Specializzata su Pazienti Geriatrici",
                     softwareDesc: "Il nostro vero \"moat\". Un'AI addestrata su un **dataset vocale proprietario di oltre 1.000 ore** per comprendere pazienti con Parkinson, afasia e disartria. Garantisce interazioni affidabili e un monitoraggio proattivo che i modelli generici non possono eguagliare.",
+                    marketTitle: "Mercato Italiano Validato",
+                    marketSubtitle: "Oltre 7.300 strutture professionali in Italia rappresentano il nostro mercato target, con un potenziale di adozione significativo data la bassa automazione attuale.",
+                    segment1Title: "🏥 RSA", segment1_1_label: "Strutture:", segment1_1_val: "4.629", segment1_2_label: "Posti letto:", segment1_2_val: "319.000", segment1_3_label: "Automatizzate:", segment1_3_val: "~12%",
+                    segment2Title: "🏥 Ospedali", segment2_1_label: "Geriatria:", segment2_1_val: "93 reparti", segment2_2_label: "Lungodegenza:", segment2_2_val: "120 unità", segment2_3_label: "AI Integration:", segment2_3_val: "<10%",
+                    segment3Title: "🏠 Hospice", segment3_1_label: "Strutture:", segment3_1_val: "307", segment3_2_label: "Posti letto:", segment3_2_val: "2.524", segment3_3_label: "Automatizzazione:", segment3_3_val: "~0%",
+                    segment4Title: "🧠 Neuroriab.", segment4_1_label: "Centri cod.75:", segment4_1_val: "72", segment4_2_label: "Posti letto:", segment4_2_val: "1.200", segment4_3_label: "Automatizzazione:", segment4_3_val: "<5%",
+                    insightsTitle: "Approfondimenti",
+                    insightsSubtitle: "Esplora la nostra visione sull'evoluzione dell'engagement, dalla gamification all'intelligenza artificiale.",
+                    articleTeaserTitle: "From Gamification to Cognitive Engagement: A 10-Year Journey",
+                    articleTeaserText: "Nel 2016, un esperimento pionieristico. Oggi, un nuovo paradigma per l'engagement in ambito health-tech. Scopri il nostro percorso e la nostra visione.",
+                    articleReadMore: "Leggi l'articolo",
                     aboutTitle: "La Nostra Missione",
                     aboutText1: "CLAP Srl nasce dalla passione per l'innovazione tecnologica applicata al settore sanitario. Siamo un team multidisciplinare con expertise in ingegneria medicale, intelligenza artificiale, certificazione MDR e sviluppo prodotto.",
                     aboutText2: "La nostra visione è trasformare l'assistenza geriatrica attraverso soluzioni digitali affidabili, sicure e scalabili con tecnologia brevettata.",
@@ -303,6 +348,8 @@
                     floatingCta: "Request a Demo",
                     navSolution: "The Solution",
                     navTechnology: "Technology",
+                    navMarket: "Market",
+                    navInsights: "Insights",
                     navAbout: "About Us",
                     navContact: "Contact",
                     heroTitle: "Therapy Management: Zero Risk, Maximum Safety.",
@@ -312,7 +359,7 @@
                     problemTitle: "The Problem is Risk, Not Inefficiency",
                     problemSubtitle: "Many healthcare facilities operate in a regulatory \"gray area.\" The practice of manual de-blistering, while necessary, exposes them to serious legal, clinical, and reputational risks. AmicoMed was created to remedy this critical issue.",
                     solutionTitle: "The Solution: A Compliance Ecosystem",
-                    solutionText: "AmicoMed does not automate a risky process: it replaces it with a workflow that is inherently safe and compliant with D.Lgs. 219/2006. By using only pharmacy-sealed pouches, we eliminate medication handling on the ward, zeroing out legal risk and ensuring immutable traceability of every administration.",
+                    solutionText: "AmicoMed does not automate a risky process: it replaces it with a workflow that is inherently safe and compliant with EU regulations. By using only pharmacy-sealed pouches, we eliminate medication handling on the ward, zeroing out legal risk and ensuring immutable traceability of every administration.",
                     benefit1Title: "Elimination of Legal Risk",
                     benefit1Desc: "Zeros out criminal and administrative liabilities related to de-blistering.",
                     benefit2Title: "Increased Clinical Safety",
@@ -327,6 +374,17 @@
                     softwarePlatform: "AI ENVIRONMENT",
                     softwareTitle: "Specialized AI for Geriatric Patients",
                     softwareDesc: "Our true \"moat.\" An AI trained on a **proprietary vocal dataset of over 1,000 hours** to understand patients with Parkinson's, aphasia, and dysarthria. It ensures reliable interactions and proactive monitoring that generic models cannot match.",
+                    marketTitle: "Validated Italian Market",
+                    marketSubtitle: "Over 7,300 professional facilities in Italy represent our target market, with significant adoption potential given the current low automation.",
+                    segment1Title: "🏥 Nursing Homes", segment1_1_label: "Facilities:", segment1_1_val: "4,629", segment1_2_label: "Beds:", segment1_2_val: "319,000", segment1_3_label: "Automated:", segment1_3_val: "~12%",
+                    segment2Title: "🏥 Hospitals", segment2_1_label: "Geriatrics:", segment2_1_val: "93 wards", segment2_2_label: "Long-term care:", segment2_2_val: "120 units", segment2_3_label: "AI Integration:", segment2_3_val: "<10%",
+                    segment3Title: "🏠 Hospices", segment3_1_label: "Facilities:", segment3_1_val: "307", segment3_2_label: "Beds:", segment3_2_val: "2,524", segment3_3_label: "Automation:", segment3_3_val: "~0%",
+                    segment4Title: "🧠 Neuro-rehab", segment4_1_label: "Code 75 centers:", segment4_1_val: "72", segment4_2_label: "Beds:", segment4_2_val: "1,200", segment4_3_label: "Automation:", segment4_3_val: "<5%",
+                    insightsTitle: "Insights",
+                    insightsSubtitle: "Explore our vision on the evolution of engagement, from gamification to artificial intelligence.",
+                    articleTeaserTitle: "From Gamification to Cognitive Engagement: A 10-Year Journey",
+                    articleTeaserText: "In 2016, a pioneering experiment. Today, a new paradigm for engagement in health-tech. Discover our journey and our vision.",
+                    articleReadMore: "Read the article",
                     aboutTitle: "Our Mission",
                     aboutText1: "CLAP Srl was born from a passion for technological innovation applied to the healthcare sector. We are a multidisciplinary team with expertise in medical engineering, artificial intelligence, MDR certification, and product development.",
                     aboutText2: "Our vision is to transform geriatric care through reliable, safe, and scalable digital solutions with patented technology.",
