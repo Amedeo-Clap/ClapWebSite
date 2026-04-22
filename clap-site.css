@@ -17,8 +17,8 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
 .site-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.header-wrap{display:flex;align-items:center;gap:24px;min-height:84px}
-.brand img{height:46px}
+.header-wrap{display:flex;align-items:center;gap:24px;min-height:92px}
+.brand img{height:60px;width:auto}
 .main-nav{display:flex;gap:28px;margin-left:auto}
 .main-nav a{font-weight:600}
 .lang-switch{display:flex;gap:8px;align-items:center}
@@ -127,8 +127,8 @@ h3{font-size:26px}
   .grid-3,.grid-4,.timeline,.cards-2,.premium-stats{grid-template-columns:1fr}
   h1{font-size:42px}
   .subhead{font-size:24px}
-  .header-wrap{min-height:72px}
-  .brand img{height:38px}
+  .header-wrap{min-height:76px}
+  .brand img{height:44px}
   .lang-switch{display:none}
   .premium-title{font-size:40px}
   .qr-row{grid-template-columns:1fr}
