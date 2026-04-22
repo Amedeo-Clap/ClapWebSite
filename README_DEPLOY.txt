@@ -1,0 +1,1 @@
+Carica nella root della repository: index.html, shaobao-executive-preview.html, clap-site.css, clap-site.js, privacy.html, cookie.html e le cartelle assets e archive. Questa versione è public-safe: non espone numeri interni, dettagli sensibili o roadmap troppo scoperte.
