@@ -1,0 +1,24 @@
+PACCHETTO PRONTO PER REPOSITORY ClapWebSite
+
+File principali da copiare nella root del repository:
+- shaobao-executive-preview.html
+- shaobao-executive-preview.css
+- shaobao-executive-preview.js
+
+Cartella assets da copiare nella root del repository:
+- shaobao-executive-preview-assets/
+
+Percorso finale atteso:
+- /shaobao-executive-preview.html
+- /shaobao-executive-preview.css
+- /shaobao-executive-preview.js
+- /shaobao-executive-preview-assets/...
+
+URL atteso su GitHub Pages:
+- /shaobao-executive-preview.html
+
+Note:
+- Non sovrascrive index.html
+- Non entra in conflitto con i file già presenti
+- Non usa backend né servizi form
+- Conferma partecipazione tramite email precompilata e telefono
