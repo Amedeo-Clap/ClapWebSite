@@ -1,0 +1,1 @@
+Crea nella root una cartella archive e sposta qui index2.html, index3.html, index5.html, index_old.html e le pagine vecchie non linkate. Non spostare index.html, shaobao-executive-preview.html, clap-site.css, clap-site.js, privacy.html, cookie.html o assets.
