@@ -1,1 +1,0 @@
-Questa versione mantiene la home bilanciata e sostituisce la landing ShaoBao con una versione premium, più editoriale e meno template.
