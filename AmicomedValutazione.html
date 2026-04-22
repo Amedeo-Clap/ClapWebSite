@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="it"><head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Integrazione dell&#39;AI Amicomed in Ambienti Sanitari: Tre Soluzioni a Bassa Classificazione MDR</title>
+    <title>AmicoMed — Ecosistema AI per la Long-Term Care</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <style>
         :root {
@@ -14,27 +14,27 @@
             --neutral: #f8fafc;
             --base-100: #ffffff;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             color: #334155;
         }
-        
+
         .serif {
             font-family: 'Playfair Display', serif;
         }
-        
+
         .hero-gradient {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        
+
         .glass-effect {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .toc-fixed {
             position: fixed;
             top: 0;
@@ -46,36 +46,23 @@
             overflow-y: auto;
             padding: 2rem 1.5rem;
         }
-        
+
         .main-content {
             margin-left: 280px;
             min-height: 100vh;
         }
-        
+
         .section-spacing {
             padding: 4rem 0;
         }
-        
-        .citation-link {
-            color: var(--primary);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--primary);
-            font-size: 0.875rem;
-            vertical-align: super;
-        }
-        
-        .citation-link:hover {
-            background-color: #dbeafe;
-            border-bottom: 1px solid var(--primary);
-        }
-        
+
         .bento-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 2rem;
             margin-bottom: 3rem;
         }
-        
+
         .hero-content {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
             border-radius: 1rem;
@@ -83,7 +70,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-content::before {
             content: '';
             position: absolute;
@@ -94,19 +81,19 @@
             background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
             animation: pulse 8s infinite alternate;
         }
-        
+
         @keyframes pulse {
             0% { transform: scale(1) rotate(0deg); }
             100% { transform: scale(1.1) rotate(180deg); }
         }
-        
+
         .executive-summary {
             background: white;
             border-radius: 1rem;
             padding: 2rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .mermaid-container {
             display: flex;
             justify-content: center;
@@ -133,9 +120,6 @@
             justify-content: center;
             align-items: center;
             touch-action: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
             user-select: none;
         }
 
@@ -144,16 +128,6 @@
             height: 100%;
             display: block;
             margin: 0 auto;
-        }
-
-        .mermaid-container .mermaid:active {
-            cursor: grabbing;
-        }
-
-        .mermaid-container.zoomed .mermaid {
-            height: 100%;
-            width: 100%;
-            cursor: grab;
         }
 
         .mermaid-controls {
@@ -193,11 +167,6 @@
             transform: translateY(-1px);
         }
 
-        .mermaid-control-btn:active {
-            transform: scale(0.95);
-        }
-        
-        /* Enhanced mermaid styling for better contrast and unified appearance */
         .mermaid .node rect,
         .mermaid .node circle,
         .mermaid .node ellipse,
@@ -205,20 +174,19 @@
             stroke-width: 2px !important;
             filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
         }
-        
+
         .mermaid .node .label {
             font-family: 'Inter', sans-serif !important;
             font-size: 13px !important;
             font-weight: 600 !important;
             fill: #1f2937 !important;
         }
-        
+
         .mermaid .edgePath .path {
             stroke: #64748b !important;
             stroke-width: 2px !important;
-            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
         }
-        
+
         .mermaid .edgeLabel {
             background-color: white !important;
             border: 1px solid #e2e8f0 !important;
@@ -227,38 +195,8 @@
             font-family: 'Inter', sans-serif !important;
             font-size: 12px !important;
             color: #374151 !important;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
         }
-        
-        /* Ensure good contrast for different node colors */
-        .mermaid .node[fill="#e3f2fd"] .label,
-        .mermaid .node[fill="#e1f5fe"] .label,
-        .mermaid .node[fill="#f3e5f5"] .label,
-        .mermaid .node[fill="#f1f8e9"] .label {
-            fill: #1f2937 !important;
-            font-weight: 600 !important;
-        }
-        
-        .mermaid .node[fill="#fff3e0"] .label {
-            fill: #374151 !important;
-            font-weight: 600 !important;
-        }
-        
-        .mermaid .node[fill="#fce4ec"] .label {
-            fill: #1f2937 !important;
-            font-weight: 600 !important;
-        }
-        
-        .mermaid .node[fill="#fff8e1"] .label {
-            fill: #374151 !important;
-            font-weight: 600 !important;
-        }
-        
-        .mermaid .node[fill="#e8f5e8"] .label {
-            fill: #1f2937 !important;
-            font-weight: 600 !important;
-        }
-        
+
         .solution-card {
             background: white;
             border-radius: 1rem;
@@ -267,12 +205,20 @@
             margin-bottom: 2rem;
             border-left: 4px solid var(--primary);
         }
-        
+
         .solution-card h3 {
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
-        
+
+        .solution-card.edge-card {
+            border-left-color: #dc2626;
+        }
+
+        .solution-card.aeolus-card {
+            border-left-color: #059669;
+        }
+
         .highlight-box {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             border-left: 4px solid #0284c7;
@@ -280,102 +226,95 @@
             margin: 2rem 0;
             border-radius: 0 0.5rem 0.5rem 0;
         }
-        
+
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #d97706;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
         .toc-link {
             display: block;
             color: #cbd5e1;
             text-decoration: none;
-            padding: 0.75rem 0;
+            padding: 0.6rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
-        
+
         .toc-link:hover {
             color: white;
             background: rgba(255, 255, 255, 0.1);
             padding-left: 1rem;
         }
-        
+
         .toc-link.active {
             color: white;
             background: rgba(255, 255, 255, 0.2);
             padding-left: 1rem;
         }
-        
+
+        .phase-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .phase-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #2563eb, #059669, #dc2626);
+            border-radius: 3px;
+        }
+
+        .phase-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .phase-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 3px solid;
+        }
+
+        .phase-item.phase-1::before { border-color: #2563eb; background: #dbeafe; }
+        .phase-item.phase-2::before { border-color: #059669; background: #d1fae5; }
+        .phase-item.phase-3::before { border-color: #dc2626; background: #fee2e2; }
+
         @media (max-width: 1024px) {
             .toc-fixed {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
-            
-            .toc-fixed.open {
-                transform: translateX(0);
-            }
-            
-            .main-content {
-                margin-left: 0;
-            }
-            
-            .bento-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mermaid-control-btn:not(.reset-zoom) {
-                display: none;
-            }
-            .mermaid-controls {
-                top: auto;
-                bottom: 15px;
-                right: 15px;
-            }
+            .toc-fixed.open { transform: translateX(0); }
+            .main-content { margin-left: 0; }
+            .bento-grid { grid-template-columns: 1fr; }
         }
 
-        /* Small screen adjustments (<= 768px) */
         @media (max-width: 768px) {
-            .hero-content {
-                padding: 1.5rem;
-            }
-            .hero-content h1 {
-                font-size: 2rem;
-                line-height: 1.2;
-            }
-            .hero-content p {
-                font-size: 1rem;
-            }
-            .section-spacing {
-                padding: 3rem 1rem;
-            }
-            .solution-card {
-                padding: 1.5rem;
-            }
-            .solution-card h3 {
-                font-size: 1.25rem;
-            }
-            .solution-card h4 {
-                font-size: 1rem;
-            }
-            .executive-summary {
-                padding: 1.5rem;
-            }
+            .hero-content { padding: 1.5rem; }
+            .hero-content h1 { font-size: 2rem; line-height: 1.2; }
+            .section-spacing { padding: 3rem 1rem; }
+            .solution-card { padding: 1.5rem; }
         }
 
-        /* Very small screen adjustments (<= 480px) */
         @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 1.75rem;
-            }
-            .hero-content p {
-                font-size: 0.9rem;
-            }
-            .section-spacing {
-                padding: 2rem 0.5rem;
-            }
-            .solution-card {
-                padding: 1rem;
-            }
-            .mermaid-container {
-                padding: 15px;
-            }
+            .hero-content h1 { font-size: 1.75rem; }
+            .section-spacing { padding: 2rem 0.5rem; }
+            .solution-card { padding: 1rem; }
         }
     </style>
   </head>
@@ -383,31 +322,28 @@
   <body class="bg-slate-50">
     <!-- Table of Contents -->
     <nav class="toc-fixed" id="toc">
-      <div class="text-white mb-8">
-        <h2 class="text-xl font-bold mb-4">Indice</h2>
+      <div class="text-white mb-6">
+        <h2 class="text-xl font-bold mb-2">AmicoMed</h2>
+        <p class="text-xs text-slate-400">Documento riservato — Soci e stakeholder</p>
       </div>
 
-      <div class="space-y-1">
+      <div class="space-y-0">
         <a href="#executive-summary" class="toc-link">Sintesi Esecutiva</a>
-        <a href="#strategia-regolatoria" class="toc-link">1. Strategia Regolatoria</a>
-        <a href="#quadro-normativo" class="toc-link">1.1 Quadro Normativo</a>
-        <a href="#regola-11" class="toc-link">1.2 Regola 11 MDR</a>
-        <a href="#precedenti-classificazione" class="toc-link">1.3 Precedenti</a>
-        <a href="#soluzione-tablet" class="toc-link">2. Soluzione Tablet</a>
-        <a href="#tablet-descrizione" class="toc-link">2.1 Descrizione</a>
-        <a href="#tablet-interazione" class="toc-link">2.2 Interazione</a>
-        <a href="#tablet-supporto" class="toc-link">2.3 Supporto</a>
-        <a href="#tablet-classificazione" class="toc-link">2.4 Classificazione</a>
-        <a href="#soluzione-wearable" class="toc-link">3. Soluzione Wearable</a>
-        <a href="#wearable-descrizione" class="toc-link">3.1 Descrizione</a>
-        <a href="#wearable-interazione" class="toc-link">3.2 Interazione</a>
-        <a href="#wearable-supporto" class="toc-link">3.3 Supporto</a>
-        <a href="#wearable-classificazione" class="toc-link">3.4 Classificazione</a>
-        <a href="#soluzione-integrata" class="toc-link">4. Soluzione Integrata</a>
-        <a href="#integrata-descrizione" class="toc-link">4.1 Descrizione</a>
-        <a href="#integrata-interazione" class="toc-link">4.2 Interazione</a>
-        <a href="#integrata-supporto" class="toc-link">4.3 Supporto</a>
-        <a href="#integrata-classificazione" class="toc-link">4.4 Classificazione</a>
+        <a href="#mercato" class="toc-link">1. Il Mercato Validato</a>
+        <a href="#ecosistema" class="toc-link">2. L'Ecosistema CLAP</a>
+        <a href="#amicomed-ai" class="toc-link">3. AmicoMed AI</a>
+        <a href="#ai-voice" class="toc-link">3.1 Voice AI Engine</a>
+        <a href="#ai-patologie" class="toc-link">3.2 Patologie Vocali</a>
+        <a href="#ai-kpi" class="toc-link">3.3 KPI e Dashboard</a>
+        <a href="#ai-regolatorio" class="toc-link">3.4 Confine MDR</a>
+        <a href="#aeolus" class="toc-link">4. Aeolus</a>
+        <a href="#amicomed-edge" class="toc-link">5. AmicoMed Edge</a>
+        <a href="#edge-workflow" class="toc-link">5.1 Workflow Integrato</a>
+        <a href="#architettura" class="toc-link">6. Architettura Tecnica</a>
+        <a href="#integrazioni" class="toc-link">7. Integrazioni</a>
+        <a href="#roadmap" class="toc-link">8. Roadmap</a>
+        <a href="#commerciale" class="toc-link">9. Modello Commerciale</a>
+        <a href="#rischi" class="toc-link">10. Rischi e Mitigazioni</a>
       </div>
     </nav>
 
@@ -415,61 +351,57 @@
     <button class="lg:hidden fixed top-4 left-4 z-50 bg-slate-800 text-white p-3 rounded-lg" onclick="toggleTOC()">
       <i class="fas fa-bars"></i>
     </button>
-
-    <!-- Backdrop Overlay -->
     <div id="toc-backdrop" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden" onclick="toggleTOC()"></div>
 
     <!-- Main Content -->
     <main class="main-content">
+
       <!-- Hero Section -->
       <section class="hero-gradient min-h-screen flex items-center">
         <div class="container mx-auto px-8 py-16">
           <div class="bento-grid">
-            <!-- Main Hero Content -->
             <div class="hero-content">
               <div class="relative z-10">
                 <h1 class="serif text-5xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-                  <em class="text-indigo-700">Integrazione dell&#39;AI Amicomed</em>
-                  <br/>
-                  in Ambienti Sanitari
+                  <em class="text-indigo-700">AmicoMed</em><br/>
+                  Ecosistema AI per la Long-Term Care
                 </h1>
                 <p class="text-xl text-slate-600 mb-8 max-w-2xl">
-                  Tre soluzioni innovative a bassa classificazione MDR per supportare pazienti e personale sanitario in RSA, cliniche e ospedali
+                  Tre prodotti integrati per RSA, RSD e nuclei Alzheimer: companion vocale intelligente, robot di sorveglianza e dispositivo di erogazione farmaci automatizzata.
                 </p>
-                <div class="flex items-center space-x-6 text-sm text-slate-500">
-                  <span><i class="fas fa-calendar mr-2"></i>Luglio 2025</span>
-                  <span><i class="fas fa-shield-alt mr-2"></i>MDR Classe I</span>
-                  <span><i class="fas fa-robot mr-2"></i>AI Medicale</span>
+                <div class="flex items-center space-x-6 text-sm text-slate-500 flex-wrap gap-y-2">
+                  <span><i class="fas fa-calendar mr-2"></i>Aprile 2026</span>
+                  <span><i class="fas fa-building mr-2"></i>CLAP Srl</span>
+                  <span><i class="fas fa-lock mr-2"></i>Riservato</span>
                 </div>
               </div>
             </div>
 
-            <!-- Executive Summary -->
             <div class="executive-summary" id="executive-summary">
               <h2 class="serif text-2xl font-bold text-slate-800 mb-4">Sintesi Esecutiva</h2>
               <p class="text-slate-600 mb-4">
-                Questo report presenta tre soluzioni alternative per integrare l&#39;AI Amicomed in strutture sanitarie, mantenendo la classificazione MDR di Classe I e superando i limiti dei tradizionali dispenser di pillole.
+                CLAP Srl sviluppa un ecosistema di tre prodotti per la long-term care, in un mercato che ha gi&agrave; dimostrato la disponibilit&agrave; delle RSA a investire in soluzioni AI. Strategia: go-to-market parallelo con tempi e classificazioni regolatorie differenziate.
               </p>
 
               <div class="space-y-3">
                 <div class="flex items-start space-x-3">
-                  <div class="w-2 h-2 bg-indigo-600 rounded-full mt-2"></div>
-                  <p class="text-sm text-slate-600"><strong>Sistema Tablet:</strong> Hub interattivo per promemoria e interazione paziente</p>
+                  <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 shrink-0"></div>
+                  <p class="text-sm text-slate-600"><strong>AmicoMed AI:</strong> Companion vocale, non dispositivo medico, pronto in 3-6 mesi</p>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="w-2 h-2 bg-indigo-600 rounded-full mt-2"></div>
-                  <p class="text-sm text-slate-600"><strong>Dispositivo Wearable:</strong> Monitoraggio continuo e promemoria discreti</p>
+                  <div class="w-2 h-2 bg-green-600 rounded-full mt-2 shrink-0"></div>
+                  <p class="text-sm text-slate-600"><strong>Aeolus A3000:</strong> Robot sorveglianza, non dispositivo medico, deployment 3-9 mesi</p>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="w-2 h-2 bg-indigo-600 rounded-full mt-2"></div>
-                  <p class="text-sm text-slate-600"><strong>Integrazione con Chiamata:</strong> Soluzione basata su infrastruttura esistente</p>
+                  <div class="w-2 h-2 bg-red-600 rounded-full mt-2 shrink-0"></div>
+                  <p class="text-sm text-slate-600"><strong>AmicoMed Edge:</strong> Pill dispensing, MDR Classe IIa, 18-24 mesi</p>
                 </div>
               </div>
 
-              <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                <p class="text-sm text-green-800">
-                  <i class="fas fa-check-circle mr-2"></i>
-                  Tutte le soluzioni mantengono la classificazione MDR di Classe I, garantendo un percorso di conformità semplificato ed economico.
+              <div class="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                <p class="text-sm text-amber-800">
+                  <i class="fas fa-info-circle mr-2"></i>
+                  I dati e le tempistiche sono stime basate sullo stato attuale. Le metriche di mercato verranno validate nei pilota.
                 </p>
               </div>
             </div>
@@ -477,561 +409,725 @@
         </div>
       </section>
 
-      <!-- Regulatory Strategy Section -->
-      <section class="section-spacing bg-white" id="strategia-regolatoria">
+      <!-- Market Section -->
+      <section class="section-spacing bg-white" id="mercato">
         <div class="container mx-auto px-8">
-          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">1. Strategia Regolatoria: Ottenere la Classificazione MDR di Classe I</h2>
+          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">1. Il Mercato Validato</h2>
 
           <p class="text-lg text-slate-600 mb-8 max-w-4xl">
-            L&#39;integrazione dell&#39;intelligenza artificiale Amicomed in ambienti sanitari richiede un&#39;attenta strategia regolatoria per garantire la conformità alle normative MDR dell&#39;Unione Europea. L&#39;obiettivo primario è ottenere una classificazione MDR di <strong>Classe I</strong>, che rappresenta il livello di rischio più basso e il percorso di conformità più semplice.
-            <a href="https://health.ec.europa.eu/system/files/2021-10/mdcg_2021-24_en_0.pdf" class="citation-link" target="_blank">[115]</a>
+            Il mercato della long-term care in Italia sta attraversando una trasformazione: le RSA investono in soluzioni AI per il monitoraggio assistenziale, i fondi di investimento finanziano startup del settore, e i grandi gruppi (Korian, Gruppo La Villa) adottano tecnologie innovative. Il mercato &egrave; validato. Il bisogno &egrave; reale. Ma le soluzioni oggi disponibili coprono solo una parte delle esigenze.
           </p>
 
-          <!-- MDR Classification Flow Diagram -->
-          <div class="my-12 bg-gray-50 p-8 rounded-lg">
-            <h3 class="text-xl font-semibold mb-6 text-center">Flusso Decisionale per la Classificazione MDR</h3>
-            <div class="mermaid-container">
-              <div class="mermaid-controls">
-                <button class="mermaid-control-btn zoom-in" title="Ingrandisci">
-                  <i class="fas fa-search-plus"></i>
-                </button>
-                <button class="mermaid-control-btn zoom-out" title="Riduci">
-                  <i class="fas fa-search-minus"></i>
-                </button>
-                <button class="mermaid-control-btn reset-zoom" title="Reimposta">
-                  <i class="fas fa-expand-arrows-alt"></i>
-                </button>
-                <button class="mermaid-control-btn fullscreen" title="Schermo intero">
-                  <i class="fas fa-expand"></i>
-                </button>
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-slate-50 p-6 rounded-lg">
+              <h3 class="text-xl font-semibold text-slate-800 mb-4">
+                <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                Cosa il mercato ha gi&agrave;
+              </h3>
+              <div class="space-y-2 text-slate-600">
+                <p>Monitoraggio visivo notturno in stanza (cadute, fughe dal letto)</p>
+                <p>Alert automatici al personale via app</p>
+                <p>Dashboard con dati di attivit&agrave; del residente</p>
+                <p>Analisi pattern sonno tramite sensori</p>
               </div>
-              <div class="mermaid">
-                flowchart TD
-                A[&#34;Software Medicale&#34;] --&gt; B{&#34;Finalità d&#39;uso&#34;}
-                B --&gt; C[&#34;Diagnosi/Terapia&#34;]
-                B --&gt; D[&#34;Monitoraggio&#34;]
-                B --&gt; E[&#34;Supporto Informativo&#34;]
+            </div>
 
-                C --&gt; F[&#34;Classe IIa/IIb/III&#34;]
-                D --&gt; G[&#34;Classe IIa/IIb&#34;]
-                E --&gt; H[&#34;Classe I&#34;]
-
-                H --&gt; I[&#34;Nessun organismo notificato&#34;]
-                F --&gt; J[&#34;Organismo notificato richiesto&#34;]
-                G --&gt; J
-
-                I --&gt; K[&#34;Non soggetto ad AI Act
-                <br/>ad alto rischio&#34;]
-                J --&gt; L[&#34;Soggetto ad AI Act
-                <br/>ad alto rischio&#34;]
-
-                style A fill:#e3f2fd,stroke:#2563eb,stroke-width:2px,color:#1e293b
-                style H fill:#e8f5e8,stroke:#16a34a,stroke-width:2px,color:#1e293b
-                style K fill:#f3e5f5,stroke:#7c3aed,stroke-width:2px,color:#1e293b
-                style F fill:#fff3e0,stroke:#ea580c,stroke-width:2px,color:#1e293b
-                style G fill:#fce4ec,stroke:#dc2626,stroke-width:2px,color:#1e293b
-                style L fill:#fce4ec,stroke:#dc2626,stroke-width:2px,color:#1e293b
-                style B fill:#fff8e1,stroke:#ca8a04,stroke-width:2px,color:#1e293b
-                style C fill:#fff8e1,stroke:#ca8a04,stroke-width:2px,color:#1e293b
-                style D fill:#fff8e1,stroke:#ca8a04,stroke-width:2px,color:#1e293b
-                style E fill:#e8f5e8,stroke:#16a34a,stroke-width:2px,color:#1e293b
-                style I fill:#f3e5f5,stroke:#7c3aed,stroke-width:2px,color:#1e293b
-                style J fill:#fce4ec,stroke:#dc2626,stroke-width:2px,color:#1e293b
+            <div class="bg-blue-50 p-6 rounded-lg">
+              <h3 class="text-xl font-semibold text-slate-800 mb-4">
+                <i class="fas fa-bullseye text-blue-600 mr-2"></i>
+                Cosa manca (dove entra AmicoMed)
+              </h3>
+              <div class="space-y-2 text-slate-600">
+                <p><strong>Interazione diretta</strong> con il residente (voce, stimolazione)</p>
+                <p><strong>Gestione farmaci</strong> (reminder, verifica, dispensing automatizzato)</p>
+                <p><strong>Stimolazione cognitiva</strong> (memory games, music therapy)</p>
+                <p><strong>Biomarker vocali</strong> (variazioni prosodia, engagement)</p>
+                <p><strong>Monitoraggio spazi comuni</strong> (mensa, palestra, giardino)</p>
+                <p><strong>Documentazione automatica</strong> (note turno, handover)</p>
               </div>
             </div>
           </div>
 
           <div class="highlight-box">
             <h3 class="text-xl font-semibold text-slate-800 mb-3">
-              <i class="fas fa-lightbulb text-amber-500 mr-2"></i>
-              Strategia Chiave: Definizione della Finalità d&#39;Uso
+              <i class="fas fa-chart-line text-blue-500 mr-2"></i>
+              Dimensione del Mercato
             </h3>
             <p class="text-slate-700">
-              La chiave per ottenere la classificazione MDR di Classe I risiede nella definizione precisa dell&#39;<strong>intended purpose</strong>, posizionando il sistema come strumento di supporto informativo e di interazione, piuttosto che come dispositivo che influenza direttamente le decisioni cliniche.
-              <a href="https://health.ec.europa.eu/system/files/2021-10/mdcg_2021-24_en_0.pdf" class="citation-link" target="_blank">[115]</a>
+              In Italia operano <strong>12.987 strutture residenziali</strong> (ISTAT 2024). Il segmento RSA con pi&ugrave; di 40 posti letto &mdash; target primario &mdash; rappresenta il nucleo indirizzabile. Il modello SaaS per-bed consente di scalare in modo lineare con la base installata.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div class="grid md:grid-cols-2 gap-8 mt-12">
-            <div class="bg-slate-50 p-6 rounded-lg">
-              <h3 class="text-xl font-semibold text-slate-800 mb-4">Interplay MDR e AI Act</h3>
-              <p class="text-slate-600 mb-4">
-                Dispositivi di Classe I che non richiedono organismo notificato <strong>non sono considerati sistemi ad alto rischio</strong> secondo l&#39;AI Act.
-                <a href="https://health.ec.europa.eu/document/download/b78a17d7-e3cd-4943-851d-e02a2f22bbb4_en?filename=mdcg_2025-6_en.pdf" class="citation-link" target="_blank">[112]</a>
-              </p>
-              <div class="text-sm text-slate-500">
-                <i class="fas fa-info-circle mr-2"></i>
-                Questo evita doppie regolamentazioni e semplifica il percorso di conformità.
+      <!-- Ecosystem Section -->
+      <section class="section-spacing bg-slate-50" id="ecosistema">
+        <div class="container mx-auto px-8">
+          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">2. L'Ecosistema CLAP: Tre Prodotti, Una Piattaforma</h2>
+
+          <p class="text-lg text-slate-600 mb-8 max-w-4xl">
+            La strategia prevede tre prodotti con classificazioni regolatorie, tempi e modelli commerciali diversi. Il go-to-market &egrave; parallelo: AmicoMed AI entra per primo (nessun vincolo certificativo), genera relazioni commerciali e raccoglie dati. Aeolus e Edge seguono, integrando la piattaforma.
+          </p>
+
+          <div class="my-12 bg-gray-50 p-8 rounded-lg">
+            <h3 class="text-xl font-semibold mb-6 text-center">Architettura dell'Ecosistema</h3>
+            <div class="mermaid-container">
+              <div class="mermaid-controls">
+                <button class="mermaid-control-btn zoom-in" title="Ingrandisci"><i class="fas fa-search-plus"></i></button>
+                <button class="mermaid-control-btn zoom-out" title="Riduci"><i class="fas fa-search-minus"></i></button>
+                <button class="mermaid-control-btn reset-zoom" title="Reimposta"><i class="fas fa-expand-arrows-alt"></i></button>
+              </div>
+              <div class="mermaid">
+                flowchart TD
+                P["PIATTAFORMA CLAP<br/>Server Edge Centrale"]
+
+                AI["AmicoMed AI<br/>Companion Vocale<br/>NON dispositivo medico"]
+                AE["Aeolus A3000<br/>Robot Sorveglianza<br/>NON dispositivo medico"]
+                ED["AmicoMed Edge<br/>Pill Dispensing<br/>MDR Classe IIa"]
+
+                P --> AI
+                P --> AE
+                P --> ED
+
+                AI --> K1["Stimolazione Cognitiva"]
+                AI --> K2["Voice Biomarker"]
+                AI --> K3["Documentazione Auto"]
+                AI --> K4["Report Famiglie"]
+
+                AE --> K5["Sorveglianza Ambienti"]
+                AE --> K6["Alert Wandering"]
+
+                ED --> K7["Erogazione Farmaci"]
+                ED --> K8["Audit Trail Crittografico"]
+
+                AI <-.->|API| AE
+                AI <-.->|API separata| ED
+
+                style P fill:#f3e5f5,stroke:#7c3aed,stroke-width:2px,color:#1e293b
+                style AI fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e293b
+                style AE fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#1e293b
+                style ED fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#1e293b
+                style K1 fill:#eff6ff,stroke:#93c5fd,color:#1e293b
+                style K2 fill:#eff6ff,stroke:#93c5fd,color:#1e293b
+                style K3 fill:#eff6ff,stroke:#93c5fd,color:#1e293b
+                style K4 fill:#eff6ff,stroke:#93c5fd,color:#1e293b
+                style K5 fill:#ecfdf5,stroke:#6ee7b7,color:#1e293b
+                style K6 fill:#ecfdf5,stroke:#6ee7b7,color:#1e293b
+                style K7 fill:#fef2f2,stroke:#fca5a5,color:#1e293b
+                style K8 fill:#fef2f2,stroke:#fca5a5,color:#1e293b
               </div>
             </div>
+          </div>
 
-            <div class="bg-slate-50 p-6 rounded-lg">
-              <h3 class="text-xl font-semibold text-slate-800 mb-4">Regola 11 MDR</h3>
-              <p class="text-slate-600 mb-4">
-                &#34;Tutti gli altri software sono classificati come Classe I&#34; - questa è la base giuridica per puntare a una classificazione MDR di Classe I.
-                <a href="https://openregulatory.com/articles/mdcg-2021-24-examples-for-software-classification-of-software-as-a-medical-device-samd" class="citation-link" target="_blank">[122]</a>
-              </p>
-              <div class="text-sm text-slate-500">
-                <i class="fas fa-gavel mr-2"></i>
-                Precedenti confermano la fattibilità di questa strategia.
-              </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600">
+              <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-microphone"></i></div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">AmicoMed AI</h3>
+              <p class="text-sm text-slate-500 mb-3">Mesi 0-6 &bull; Non MDR</p>
+              <p class="text-slate-600 text-sm">Companion vocale intelligente su tablet. Stimolazione cognitiva, reminder farmaci, documentazione automatica, report famiglie. Primo prodotto a mercato.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-600">
+              <div class="text-green-600 text-3xl mb-4"><i class="fas fa-robot"></i></div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">Aeolus A3000</h3>
+              <p class="text-sm text-slate-500 mb-3">Mesi 3-9 &bull; EN ISO 13482 (in corso)</p>
+              <p class="text-slate-600 text-sm">Robot autonomo di sorveglianza ambientale. Pilota Coopservice completato, progetto Trenord in corso. Da adattare per RSA: corridoi, aree comuni, notturno.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600">
+              <div class="text-red-600 text-3xl mb-4"><i class="fas fa-pills"></i></div>
+              <h3 class="text-xl font-bold text-slate-800 mb-2">AmicoMed Edge</h3>
+              <p class="text-sm text-slate-500 mb-3">Mesi 18-24 &bull; MDR Classe IIa</p>
+              <p class="text-slate-600 text-sm">Dispositivo medico per erogazione automatizzata farmaci. STM32H7, dual QR reader, audit trail SHA-256+ECDSA. Richiede Notified Body.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Solution 1: Tablet System -->
-      <section class="section-spacing bg-slate-50" id="soluzione-tablet">
+      <!-- AmicoMed AI Section -->
+      <section class="section-spacing bg-white" id="amicomed-ai">
         <div class="container mx-auto px-8">
-          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">2. Soluzione 1: Sistema di Promemoria Basato su Tablet Interattivo</h2>
+          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">3. AmicoMed AI: Companion Vocale Intelligente</h2>
 
-          <div class="solution-card" id="tablet-descrizione">
-            <h3 class="serif text-2xl font-bold">2.1 Descrizione dell&#39;Integrazione</h3>
+          <p class="text-lg text-slate-600 mb-8 max-w-4xl">
+            AmicoMed AI &egrave; il primo prodotto della piattaforma. Opera su tablet commerciale come companion vocale per i residenti delle RSA: interazione naturale, stimolazione cognitiva, reminder terapeutici, documentazione automatica per lo staff, report per le famiglie. Non &egrave; un dispositivo medico purch&eacute; l'intended use resti entro i limiti del supporto non-diagnostico.
+          </p>
+
+          <!-- Voice AI Engine -->
+          <div class="solution-card" id="ai-voice">
+            <h3 class="serif text-2xl font-bold">3.1 Voice AI Engine</h3>
             <p class="text-slate-600 mb-6">
-              La prima soluzione consiste nell&#39;integrare l&#39;AI Amicomed come Software as a Medical Device (SaMD) su tablet standard, distribuiti ai pazienti nelle loro stanze di degenza. Questo approccio trasforma il comune dispositivo da comodino in un hub interattivo di comunicazione e supporto.
+              Il cuore del sistema &egrave; una pipeline di elaborazione vocale edge-first, ottimizzata per la popolazione geriatrica italiana. Il 90% del processing avviene localmente (server edge in RSA), garantendo funzionamento offline e latenza &lt;300ms.
+            </p>
+
+            <div class="my-8 bg-gray-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold mb-4 text-center">Pipeline Voice AI <span class="text-sm font-normal text-slate-500">(architettura target &mdash; modelli e dimensioni da validare)</span></h4>
+              <div class="mermaid-container">
+                <div class="mermaid-controls">
+                  <button class="mermaid-control-btn zoom-in" title="Ingrandisci"><i class="fas fa-search-plus"></i></button>
+                  <button class="mermaid-control-btn zoom-out" title="Riduci"><i class="fas fa-search-minus"></i></button>
+                  <button class="mermaid-control-btn reset-zoom" title="Reimposta"><i class="fas fa-expand-arrows-alt"></i></button>
+                </div>
+                <div class="mermaid">
+                  flowchart LR
+                  A["Audio Input<br/>Microfono"] --> B["Preprocessing<br/>Wiener Filter<br/>Noise Reduction"]
+                  B --> C["STT<br/>Whisper-tiny-it<br/>39MB"]
+                  C --> D["NLU<br/>DistilBERT-IT<br/>66MB"]
+                  D --> E["Intent<br/>25 classi"]
+
+                  B --> F["Emotion<br/>Custom CNN<br/>12MB"]
+
+                  E --> G["Response<br/>Generation"]
+                  F --> G
+                  G --> H["TTS<br/>Voce Naturale"]
+
+                  style A fill:#e3f2fd,stroke:#2563eb,stroke-width:2px,color:#1e293b
+                  style B fill:#e3f2fd,stroke:#2563eb,stroke-width:2px,color:#1e293b
+                  style C fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e293b
+                  style D fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e293b
+                  style E fill:#eff6ff,stroke:#60a5fa,stroke-width:2px,color:#1e293b
+                  style F fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#1e293b
+                  style G fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#1e293b
+                  style H fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#1e293b
+                </div>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-blue-50 p-5 rounded-lg">
+                <h4 class="font-semibold text-slate-800 mb-3"><i class="fas fa-language text-blue-600 mr-2"></i>Dialetti Italiani</h4>
+                <p class="text-sm text-slate-600 mb-2">La popolazione RSA (70-95 anni) usa frequentemente il dialetto, spesso in code-switching con l'italiano. Il sistema gestisce:</p>
+                <p class="text-sm text-slate-600">15 macro-aree dialettali (lombardo, veneto, napoletano, siciliano...), code-switching nella stessa frase, vocabolario dialettale per bisogni primari (dolore, fame, farmaci).</p>
+                <p class="text-xs text-slate-500 mt-2"><em>Fase 1: tolleranza al code-switching. Fase 2: fine-tuning per macro-aree con dati dai pilota.</em></p>
+              </div>
+              <div class="bg-blue-50 p-5 rounded-lg">
+                <h4 class="font-semibold text-slate-800 mb-3"><i class="fas fa-brain text-blue-600 mr-2"></i>Stimolazione Cognitiva</h4>
+                <p class="text-sm text-slate-600 mb-2">Modulo gi&agrave; operativo. Include:</p>
+                <p class="text-sm text-slate-600">Memory games adattivi, word association, storytelling personalizzato, music therapy con playlist generazionali e regionali, virtual reminiscence.</p>
+                <p class="text-xs text-slate-500 mt-2"><em>Questo &egrave; il cuneo d'ingresso: genera engagement immediato, non richiede dataset maturo.</em></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Patologie Vocali -->
+          <div class="solution-card" id="ai-patologie">
+            <h3 class="serif text-2xl font-bold">3.2 Gestione Patologie Vocali</h3>
+            <p class="text-slate-600 mb-6">
+              Le patologie che alterano la voce non sono edge case ma il caso d'uso primario in RSA. Il sistema &egrave; progettato con profili vocali configurabili per ogni residente.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-purple-500">
+                <h4 class="font-semibold text-slate-800 mb-2">Parkinson</h4>
+                <p class="text-sm text-slate-600">Ipofonia (-20dB), monotonia prosodica, festinazione, tremor vocale, palilalia. Profilo dedicato con amplificazione adattiva e emotion detection basata su contenuto semantico.</p>
+              </div>
+              <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-orange-500">
+                <h4 class="font-semibold text-slate-800 mb-2">Disartria</h4>
+                <p class="text-sm text-slate-600">Articolazione imprecisa, intelligibilit&agrave; &lt;50% nei casi gravi. Fallback multimodale: touch su tablet, selezione icone, risposte s&igrave;/no.</p>
+              </div>
+              <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-pink-500">
+                <h4 class="font-semibold text-slate-800 mb-2">Afasia</h4>
+                <p class="text-sm text-slate-600">Broca (frasi telegrafiche), Wernicke (parafasie), anomia. Intent classification basata su keyword spotting + contesto situazionale.</p>
+              </div>
+              <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-teal-500">
+                <h4 class="font-semibold text-slate-800 mb-2">Ipoacusia</h4>
+                <p class="text-sm text-slate-600">Problema di output: TTS con volume adattivo, frequenze ottimizzate (500-2000 Hz), sottotitoli in tempo reale su tablet.</p>
+              </div>
+              <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-cyan-500">
+                <h4 class="font-semibold text-slate-800 mb-2">Presbyfonia</h4>
+                <p class="text-sm text-slate-600">Invecchiamento vocale fisiologico: il baseline di tutti gli utenti. Il modello &egrave; addestrato su voce 70-95 anni come norma.</p>
+              </div>
+              <div class="bg-slate-50 p-5 rounded-lg border-l-4 border-amber-500">
+                <h4 class="font-semibold text-slate-800 mb-2">Demenza lieve-moderata</h4>
+                <p class="text-sm text-slate-600">Ripetizioni, digressioni, perdita del filo. Gentle redirect senza frustrazione, gestione naturale della memoria a breve termine.</p>
+              </div>
+            </div>
+
+            <div class="warning-box mt-6">
+              <p class="text-sm text-amber-800">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                <strong>Punto debole dichiarato:</strong> il dataset vocale geriatrico italiano con patologie &egrave; in fase iniziale di raccolta. Le performance del voice recognition su queste patologie saranno validate incrementalmente durante i pilota. Non esistono dataset pubblici italiani equivalenti a DementiaBank (inglese).
+              </p>
+            </div>
+          </div>
+
+          <!-- KPI e Dashboard -->
+          <div class="solution-card" id="ai-kpi">
+            <h3 class="serif text-2xl font-bold">3.3 KPI e Dashboard per le RSA</h3>
+            <p class="text-slate-600 mb-6">
+              I KPI sono progettati per 4 buyer persona distinte. Ogni KPI deve essere effettivamente calcolabile dai dati che il sistema raccoglie &mdash; nessuna metrica decorativa.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="border-l-4 border-blue-500 pl-5">
+                <h4 class="font-semibold text-slate-800 mb-2"><i class="fas fa-user-tie text-blue-500 mr-2"></i>Direttore di Struttura</h4>
+                <p class="text-sm text-slate-600">Costi evitati (stimati, con benchmark pre/post), indicatori qualit&agrave; per accreditamento regionale, tempo staff risparmiato su documentazione</p>
+              </div>
+              <div class="border-l-4 border-green-500 pl-5">
+                <h4 class="font-semibold text-slate-800 mb-2"><i class="fas fa-user-nurse text-green-500 mr-2"></i>Coordinatore di Nucleo</h4>
+                <p class="text-sm text-slate-600">Engagement cognitivo per residente e nucleo, trend variazioni comportamentali, aderenza terapeutica, dati per revisione PAI</p>
+              </div>
+              <div class="border-l-4 border-purple-500 pl-5">
+                <h4 class="font-semibold text-slate-800 mb-2"><i class="fas fa-user text-purple-500 mr-2"></i>Operatore / Infermiere</h4>
+                <p class="text-sm text-slate-600">Alert prioritizzati senza fatigue, stato aderenza di tutti i pazienti a colpo d'occhio, note turno trascritte automaticamente</p>
+              </div>
+              <div class="border-l-4 border-pink-500 pl-5">
+                <h4 class="font-semibold text-slate-800 mb-2"><i class="fas fa-heart text-pink-500 mr-2"></i>Familiare / Caregiver</h4>
+                <p class="text-sm text-slate-600">Report settimanale: come sta, cosa ha fatto, come interagisce. Tono rassicurante, non clinico. Solo dati autorizzati (consenso paziente/tutore).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Confine MDR -->
+          <div class="solution-card" id="ai-regolatorio">
+            <h3 class="serif text-2xl font-bold">3.4 Strategia Regolatoria: il Confine MDR</h3>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
+              <h4 class="text-lg font-semibold text-red-800 mb-3">
+                <i class="fas fa-shield-alt text-red-600 mr-2"></i>
+                Vincolo Non Negoziabile
+              </h4>
+              <p class="text-red-700 mb-4">
+                AmicoMed AI <strong>non deve rientrare</strong> nella classificazione MDR. Questo determina ogni scelta architetturale e funzionale.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h5 class="font-semibold text-red-700 mb-2">MAI</h5>
+                  <div class="text-sm text-red-600 space-y-1">
+                    <p>Claim diagnostici ("il paziente ha la demenza")</p>
+                    <p>Claim terapeutici ("questo trattamento migliora...")</p>
+                    <p>Decisioni cliniche autonome</p>
+                    <p>Output interpretabili come diagnosi</p>
+                  </div>
+                </div>
+                <div>
+                  <h5 class="font-semibold text-green-700 mb-2">SEMPRE</h5>
+                  <div class="text-sm text-green-600 space-y-1">
+                    <p>Human-in-the-loop per decisioni critiche</p>
+                    <p>Confidence scoring trasparente</p>
+                    <p>Fallback manuale disponibile</p>
+                    <p>Intended use documentato per ogni componente</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="my-8 bg-gray-50 p-6 rounded-lg">
+              <h4 class="text-lg font-semibold mb-4 text-center">Classificazione Regolatoria per Prodotto</h4>
+              <div class="mermaid-container">
+                <div class="mermaid-controls">
+                  <button class="mermaid-control-btn zoom-in" title="Ingrandisci"><i class="fas fa-search-plus"></i></button>
+                  <button class="mermaid-control-btn zoom-out" title="Riduci"><i class="fas fa-search-minus"></i></button>
+                  <button class="mermaid-control-btn reset-zoom" title="Reimposta"><i class="fas fa-expand-arrows-alt"></i></button>
+                </div>
+                <div class="mermaid">
+                  flowchart TD
+                  A["Ecosistema CLAP"] --> B["AmicoMed AI"]
+                  A --> C["Aeolus A3000"]
+                  A --> D["AmicoMed Edge"]
+
+                  B --> B1["Intended use:<br/>Supporto informativo<br/>e interazione"]
+                  B1 --> B2["NON dispositivo medico<br/>Nessun Notified Body"]
+
+                  C --> C1["Intended use:<br/>Sorveglianza ambientale"]
+                  C1 --> C2["EN ISO 13482<br/>Service Robot<br/>(in corso)"]
+
+                  D --> D1["Intended use:<br/>Erogazione farmaci<br/>Regola 10/11 MDR"]
+                  D1 --> D2["MDR Classe IIa<br/>Notified Body richiesto"]
+
+                  style A fill:#f3e5f5,stroke:#7c3aed,stroke-width:2px,color:#1e293b
+                  style B fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e293b
+                  style B1 fill:#eff6ff,stroke:#93c5fd,color:#1e293b
+                  style B2 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#1e293b
+                  style C fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#1e293b
+                  style C1 fill:#ecfdf5,stroke:#6ee7b7,color:#1e293b
+                  style C2 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#1e293b
+                  style D fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#1e293b
+                  style D1 fill:#fef2f2,stroke:#fca5a5,color:#1e293b
+                  style D2 fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#1e293b
+                </div>
+              </div>
+            </div>
+
+            <div class="warning-box">
+              <p class="text-sm text-amber-800">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                <strong>Rischio monitorato:</strong> se AmicoMed AI dovesse fare claim di prevenzione del deterioramento cognitivo o suggerire variazioni terapeutiche, potrebbe rientrare in MDR. L'architettura software include guardrail tecnici per impedire questo scenario.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aeolus Section -->
+      <section class="section-spacing bg-slate-50" id="aeolus">
+        <div class="container mx-auto px-8">
+          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">4. Aeolus A3000: Robot di Sorveglianza</h2>
+
+          <div class="solution-card aeolus-card">
+            <p class="text-slate-600 mb-6">
+              Robot autonomo con pilota Coopservice completato e progetto Trenord/Cortina 2026 in corso. Per le RSA viene adattato come sistema di sorveglianza ambientale: corridoi, aree comuni, monitoraggio notturno. Non &egrave; un dispositivo medico &mdash; fa solo sorveglianza (EN ISO 13482 per service robot).
             </p>
 
             <div class="grid md:grid-cols-3 gap-6 mb-8">
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <i class="fas fa-tablet-alt text-blue-600 text-2xl mb-3"></i>
-                <h4 class="font-semibold text-slate-800 mb-2">SaMD su Hardware Standard</h4>
-                <p class="text-sm text-slate-600">Applicazione su tablet Android/iOS con gestione centralizzata</p>
-              </div>
-              <div class="bg-green-50 p-4 rounded-lg">
-                <i class="fas fa-hospital text-green-600 text-2xl mb-3"></i>
-                <h4 class="font-semibold text-slate-800 mb-2">Distribuzione in Reparto</h4>
-                <p class="text-sm text-slate-600">Tablet robusti configurati in modalità kiosk per ogni paziente</p>
-              </div>
-              <div class="bg-purple-50 p-4 rounded-lg">
-                <i class="fas fa-users text-purple-600 text-2xl mb-3"></i>
-                <h4 class="font-semibold text-slate-800 mb-2">Doppia Interfaccia</h4>
-                <p class="text-sm text-slate-600">Modalità paziente semplice e dashboard per personale</p>
-              </div>
-            </div>
-
-            <img src="https://kimi-web-img.moonshot.cn/img/www.ecranet.com/1361a8cc9fbdc6505ceb223b7d5b85f9ea935c45.jpg" alt="Tablet medicale in ambiente ospedaliero" class="w-full h-64 object-cover rounded-lg mb-6" size="medium" aspect="wide" style="photo" query="tablet medicale in ospedale" referrerpolicy="no-referrer" data-modified="1" data-score="11594.00"/>
-          </div>
-
-          <div class="solution-card" id="tablet-interazione">
-            <h3 class="serif text-2xl font-bold">2.2 Funzionalità per l&#39;Interazione con il Paziente</h3>
-
-            <div class="space-y-6">
-              <div class="border-l-4 border-blue-500 pl-6">
-                <h4 class="text-lg font-semibold text-slate-800 mb-3">
-                  <i class="fas fa-bell text-blue-500 mr-2"></i>
-                  Promemoria Visivi e Uditivi
-                </h4>
-                <p class="text-slate-600 mb-3">
-                  Quando è il momento di prendere un farmaco, il tablet si attiva con promemoria visivi e uditivi chiari e non allarmanti. Il paziente può confermare, posticipare o richiedere assistenza.
-                </p>
-                <div class="bg-blue-50 p-4 rounded-lg">
-                  <p class="text-sm text-blue-800 italic">
-                    &#34;Buongiorno [Nome], è ora di prendere la sua [Farmaco]&#34;
-                  </p>
-                </div>
-              </div>
-
-              <div class="border-l-4 border-green-500 pl-6">
-                <h4 class="text-lg font-semibold text-slate-800 mb-3">
-                  <i class="fas fa-heart text-green-500 mr-2"></i>
-                  Messaggi di Stimolazione
-                </h4>
-                <p class="text-slate-600 mb-3">
-                  L&#39;AI invia messaggi di supporto e feedback positivo durante il giorno per migliorare il morale del paziente e incoraggiare comportamenti salutari.
-                </p>
-                <div class="bg-green-50 p-4 rounded-lg">
-                  <p class="text-sm text-green-800 italic">
-                    &#34;Complimenti per la passeggiata di oggi! Ogni passo è un passo verso il benessere.&#34;
-                  </p>
-                </div>
-              </div>
-
-              <div class="border-l-4 border-purple-500 pl-6">
-                <h4 class="text-lg font-semibold text-slate-800 mb-3">
-                  <i class="fas fa-graduation-cap text-purple-500 mr-2"></i>
-                  Contenuti Educativi
-                </h4>
-                <p class="text-slate-600">
-                  Il tablet funge da piattaforma per la distribuzione di contenuti educativi personalizzati sulla condizione del paziente e sullo scopo dei farmaci.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="solution-card" id="tablet-supporto">
-            <h3 class="serif text-2xl font-bold">2.3 Funzionalità di Supporto al Personale Infermieristico</h3>
-
-            <div class="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 class="text-lg font-semibold text-slate-800 mb-4">
-                  <i class="fas fa-chart-line text-indigo-600 mr-2"></i>
-                  Dashboard di Monitoraggio
-                </h4>
-                <p class="text-slate-600 mb-4">
-                  Vista a colpo d&#39;occhio dello stato di aderenza di tutti i pazienti, con indicatori visivi chiari (verde, giallo, rosso) e possibilità di accesso ai dettagli.
-                </p>
-
-                <h4 class="text-lg font-semibold text-slate-800 mb-4">
-                  <i class="fas fa-clipboard-list text-indigo-600 mr-2"></i>
-                  Log delle Interazioni
-                </h4>
-                <p class="text-slate-600">
-                  Registrazione dettagliata e sicura di ogni interazione, utile per motivi clinici e legali, con rilevamento di anomalie nei pattern di comportamento.
-                </p>
-              </div>
-
-              <div>
-                <h4 class="text-lg font-semibold text-slate-800 mb-4">
-                  <i class="fas fa-comments text-indigo-600 mr-2"></i>
-                  Comunicazione Bidirezionale
-                </h4>
-                <p class="text-slate-600 mb-4">
-                  Gli infermieri possono inviare messaggi a pazienti specifici e ricevere richieste di assistenza non urgenti attraverso una comunicazione strutturata.
-                </p>
-
-                <div class="bg-indigo-50 p-4 rounded-lg">
-                  <h5 class="font-semibold text-indigo-800 mb-2">Benefici per il Personale</h5>
-                  <ul class="text-sm text-indigo-700 space-y-1">
-                    <li>• Riduzione dei carichi di lavoro di routine</li>
-                    <li>• Monitoraggio centralizzato</li>
-                    <li>• Comunicazione efficiente</li>
-                    <li>• Dati per analisi e report</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="solution-card" id="tablet-classificazione">
-            <h3 class="serif text-2xl font-bold">2.4 Giustificazione della Classificazione MDR</h3>
-
-            <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-              <h4 class="text-lg font-semibold text-green-800 mb-3">
-                <i class="fas fa-check-circle text-green-600 mr-2"></i>
-                Classificazione MDR di Classe I Giustificata
-              </h4>
-              <div class="grid md:grid-cols-3 gap-4">
-                <div>
-                  <h5 class="font-semibold text-green-700 mb-2">Supporto Informativo</h5>
-                  <p class="text-sm text-green-600">Fornisce informazioni e promemoria, non influenza direttamente diagnosi o trattamento</p>
-                </div>
-                <div>
-                  <h5 class="font-semibold text-green-700 mb-2">Nessuna Modifica Terapia</h5>
-                  <p class="text-sm text-green-600">Non altera dosaggi, orari o suggerisce interruzioni di farmaci</p>
-                </div>
-                <div>
-                  <h5 class="font-semibold text-green-700 mb-2">Precedenti Confermati</h5>
-                  <p class="text-sm text-green-600">Analogia con app di fertilità di Classe I
-                    <a href="https://health.ec.europa.eu/system/files/2021-10/mdcg_2021-24_en_0.pdf" class="citation-link" target="_blank">[122]</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <p class="text-slate-600">
-              Il posizionamento come dispositivo di supporto informativo, combinato con l&#39;assenza di funzioni di modifica terapeutica e la coerenza con precedenti di classificazione, fornisce una solida base per la classificazione MDR di Classe I.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Solution 2: Wearable System -->
-      <section class="section-spacing bg-white" id="soluzione-wearable">
-        <div class="container mx-auto px-8">
-          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">3. Soluzione 2: Sistema di Promemoria Indossabile (Wearable)</h2>
-
-          <div class="solution-card" id="wearable-descrizione">
-            <h3 class="serif text-2xl font-bold">3.1 Descrizione dell&#39;Integrazione</h3>
-            <p class="text-slate-600 mb-6">
-              La seconda soluzione prevede l&#39;integrazione dell&#39;AI Amicomed in un dispositivo indossabile, come uno smartwatch o un braccialetto dedicato. Questo approccio offre continuità e integrazione nella vita quotidiana del paziente, indipendentemente dalla sua posizione nella struttura.
-            </p>
-
-            <div class="bg-slate-50 p-6 rounded-lg mb-6">
-              <h4 class="text-lg font-semibold text-slate-800 mb-4">Architettura del Sistema</h4>
-              <div class="grid md:grid-cols-3 gap-4">
-                <div class="text-center">
-                  <i class="fas fa-watch text-3xl text-blue-600 mb-2"></i>
-                  <p class="text-sm font-semibold">Dispositivo Indossabile</p>
-                  <p class="text-xs text-slate-600">Smartwatch o braccialetto dedicato</p>
-                </div>
-                <div class="text-center">
-                  <i class="fas fa-sync text-3xl text-green-600 mb-2"></i>
-                  <p class="text-sm font-semibold">Sincronizzazione</p>
-                  <p class="text-xs text-slate-600">Bluetooth/Wi-Fi con piattaforma centrale</p>
-                </div>
-                <div class="text-center">
-                  <i class="fas fa-cloud text-3xl text-purple-600 mb-2"></i>
-                  <p class="text-sm font-semibold">Piattaforma Centrale</p>
-                  <p class="text-xs text-slate-600">Gestione piani terapeutici e monitoraggio</p>
-                </div>
-              </div>
-            </div>
-
-            <img src="https://kimi-web-img.moonshot.cn/img/drafib.com/220de718050f8885cdfe59a6be6d2a77d2678694.jpeg" alt="Smartwatch medicale indossato da paziente anziano in ospedale" class="w-full h-64 object-cover rounded-lg" size="medium" aspect="wide" style="photo" query="smartwatch medicale paziente anziano ospedale" referrerpolicy="no-referrer" data-modified="1" data-score="11590.00"/>
-          </div>
-
-          <div class="solution-card" id="wearable-interazione">
-            <h3 class="serif text-2xl font-bold">3.2 Funzionalità per l&#39;Interazione con il Paziente</h3>
-
-            <div class="space-y-6">
-              <div class="flex items-start space-x-4">
-                <div class="bg-blue-100 p-3 rounded-full">
-                  <i class="fas fa-hand-paper text-blue-600"></i>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-slate-800 mb-2">Promemoria Tattili (Vibrazioni)</h4>
-                  <p class="text-slate-600">Quando è il momento di prendere un farmaco, il dispositivo vibra con un pattern distintivo. Il paziente può confermare con un semplice gesto come un tocco sullo schermo.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-4">
-                <div class="bg-green-100 p-3 rounded-full">
-                  <i class="fas fa-walking text-green-600"></i>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-slate-800 mb-2">Monitoraggio Benessere Generale</h4>
-                  <p class="text-slate-600">Raccolta passiva di parametri come passi, attività fisica e qualità del sonno per fornire un quadro completo del benessere, senza scopi diagnostici.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-4">
-                <div class="bg-purple-100 p-3 rounded-full">
-                  <i class="fas fa-check-circle text-purple-600"></i>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-slate-800 mb-2">Conferma Semplificata</h4>
-                  <p class="text-slate-600">Interazione minima richiesta: tocco sullo schermo, pressione prolungata di un pulsante o movimento del polso, seguita da feedback positivo.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="solution-card" id="wearable-supporto">
-            <h3 class="serif text-2xl font-bold">3.3 Funzionalità di Supporto al Personale Infermieristico</h3>
-
-            <div class="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 class="text-lg font-semibold text-slate-800 mb-4">
-                  <i class="fas fa-map-marker-alt text-red-600 mr-2"></i>
-                  Visualizzazione in Tempo Reale
-                </h4>
-                <p class="text-slate-600 mb-4">
-                  La dashboard mostra lo stato del paziente e la sua posizione approssimativa all&#39;interno della struttura, permettendo interventi rapidi e mirati.
-                </p>
-
-                <h4 class="text-lg font-semibold text-slate-800 mb-4">
-                  <i class="fas fa-exclamation-triangle text-amber-600 mr-2"></i>
-                  Allarmi Intelligenti
-                </h4>
-                <p class="text-slate-600">
-                  Ricezione di allarmi solo dopo mancata risposta ripetuta, riducendo i falsi allarmi e prevenendo la &#34;fatigue da allarme&#34; del personale.
-                </p>
-              </div>
-
-              <div>
-                <h4 class="text-lg font-semibold text-slate-800 mb-4">
-                  <i class="fas fa-chart-bar text-indigo-600 mr-2"></i>
-                  Analisi Aggregata
-                </h4>
-                <p class="text-slate-600 mb-4">
-                  Analisi dei dati di benessere per identificare tendenze, correlare farmaci con cambiamenti nei pattern di attività e migliorare la gestione del reparto.
-                </p>
-
-                <div class="bg-indigo-50 p-4 rounded-lg">
-                  <h5 class="font-semibold text-indigo-800 mb-2">Dati Raccolti</h5>
-                  <ul class="text-sm text-indigo-700 space-y-1">
-                    <li>• Passi e livello di attività</li>
-                    <li>• Qualità del sonno</li>
-                    <li>• Conferme terapia</li>
-                    <li>• Posizione approssimativa</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="solution-card" id="wearable-classificazione">
-            <h3 class="serif text-2xl font-bold">3.4 Giustificazione della Classificazione MDR</h3>
-
-            <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-              <h4 class="text-lg font-semibold text-green-800 mb-3">
-                <i class="fas fa-check-circle text-green-600 mr-2"></i>
-                Classificazione MDR di Classe I Supportata
-              </h4>
-              <div class="grid md:grid-cols-3 gap-4">
-                <div>
-                  <h5 class="font-semibold text-green-700 mb-2">Monitoraggio Benessere</h5>
-                  <p class="text-sm text-green-600">Sensori utilizzati per benessere generale, non per diagnosi clinica</p>
-                </div>
-                <div>
-                  <h5 class="font-semibold text-green-700 mb-2">Analogia con Dispositivi di Consumo</h5>
-                  <p class="text-sm text-green-600">Simile a Oura Ring, smartwatch - classificati come Classe I
-                    <a href="https://openregulatory.com/articles/mdcg-2021-24-examples-for-software-classification-of-software-as-a-medical-device-samd" class="citation-link" target="_blank">[122]</a>
-                  </p>
-                </div>
-                <div>
-                  <h5 class="font-semibold text-green-700 mb-2">Funzionalità Limitata</h5>
-                  <p class="text-sm text-green-600">Promemoria e monitoraggio base, nessuna interpretazione clinica</p>
-                </div>
-              </div>
-            </div>
-
-            <p class="text-slate-600">
-              La distinzione tra monitoraggio del benessere e monitoraggio diagnostico è cruciale per mantenere la classificazione di Classe I. L&#39;analogia con dispositivi di consumo consolidati rafforza la posizione regolatoria.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Solution 3: Integrated System -->
-      <section class="section-spacing bg-slate-50" id="soluzione-integrata">
-        <div class="container mx-auto px-8">
-          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">4. Soluzione 3: Sistema Integrato di Chiamata Infermieristica e Sensori Ambientali</h2>
-
-          <div class="solution-card" id="integrata-descrizione">
-            <h3 class="serif text-2xl font-bold">4.1 Descrizione dell&#39;Integrazione</h3>
-            <p class="text-slate-600 mb-6">
-              La terza soluzione si basa sull&#39;integrazione dell&#39;AI Amicomed come modulo aggiuntivo all&#39;infrastruttura esistente dell&#39;ospedale, in particolare al sistema di chiamata infermieristica e ai sensori ambientali. Questo approccio è altamente scalabile e rappresenta un&#39;evoluzione intelligente dei sistemi già in uso.
-            </p>
-
-            <div class="grid md:grid-cols-3 gap-6 mb-8">
-              <div class="bg-blue-50 p-4 rounded-lg text-center">
-                <i class="fas fa-plug text-blue-600 text-2xl mb-3"></i>
-                <h4 class="font-semibold text-slate-800 mb-2">Modulo Aggiuntivo</h4>
-                <p class="text-sm text-slate-600">Software che si interfaccia con sistema di chiamata esistente via API</p>
+              <div class="bg-green-50 p-4 rounded-lg text-center">
+                <i class="fas fa-route text-green-600 text-2xl mb-3"></i>
+                <h4 class="font-semibold text-slate-800 mb-2">Navigazione Autonoma</h4>
+                <p class="text-sm text-slate-600">Percorsi programmabili, evitamento ostacoli, gestione ascensori</p>
               </div>
               <div class="bg-green-50 p-4 rounded-lg text-center">
-                <i class="fas fa-sensor text-green-600 text-2xl mb-3"></i>
+                <i class="fas fa-video text-green-600 text-2xl mb-3"></i>
                 <h4 class="font-semibold text-slate-800 mb-2">Sensori Ambientali</h4>
-                <p class="text-sm text-slate-600">Rilevamento presenza e movimento per promemoria contestuali</p>
+                <p class="text-sm text-slate-600">Telecamere, LiDAR, sensori temperatura/umidit&agrave;, rilevamento fumo</p>
               </div>
-              <div class="bg-purple-50 p-4 rounded-lg text-center">
-                <i class="fas fa-volume-up text-purple-600 text-2xl mb-3"></i>
-                <h4 class="font-semibold text-slate-800 mb-2">Output Esistenti</h4>
-                <p class="text-sm text-slate-600">Annunci vocali attraverso speaker e display già installati</p>
-              </div>
-            </div>
-
-            <img src="https://kimi-web-img.moonshot.cn/img/professionisti.bticino.it/a5ebcb2d65c2717f51c0ff004730771d3b9f8b3d.jpg" alt="Sistema di chiamata infermieristica con pannello a muro e sensori in stanza ospedaliera" class="w-full h-64 object-cover rounded-lg" size="medium" aspect="wide" style="photo" query="sistema chiamata infermieristica ospedale" referrerpolicy="no-referrer" data-modified="1" data-score="11593.00"/>
-          </div>
-
-          <div class="solution-card" id="integrata-interazione">
-            <h3 class="serif text-2xl font-bold">4.2 Funzionalità per l&#39;Interazione con il Paziente</h3>
-
-            <div class="space-y-6">
-              <div class="border-l-4 border-blue-500 pl-6">
-                <h4 class="text-lg font-semibold text-slate-800 mb-3">
-                  <i class="fas fa-microphone text-blue-500 mr-2"></i>
-                  Annunci Vocali Automatici
-                </h4>
-                <p class="text-slate-600 mb-3">
-                  All&#39;orario prestabilito, l&#39;AI attiva l&#39;altoparlante della stanza con un messaggio vocale chiaro e rassicurante, senza richiedere capacità di lettura.
-                </p>
-                <div class="bg-blue-50 p-4 rounded-lg">
-                  <p class="text-sm text-blue-800 italic">
-                    &#34;Signor Rossi, è ora di prendere il suo farmaco per il cuore. Il bicchiere d&#39;acqua è sul comodino.&#34;
-                  </p>
-                </div>
-              </div>
-
-              <div class="border-l-4 border-green-500 pl-6">
-                <h4 class="text-lg font-semibold text-slate-800 mb-3">
-                  <i class="fas fa-user-check text-green-500 mr-2"></i>
-                  Rilevamento della Presenza
-                </h4>
-                <p class="text-slate-600 mb-3">
-                  Sensori di movimento rilevano la presenza del paziente nella stanza, evitando promemoria a vuoto e adattandosi al comportamento naturale.
-                </p>
-                <div class="bg-green-50 p-4 rounded-lg">
-                  <p class="text-sm text-green-800 italic">
-                    Promemoria posticipato se paziente assente, messaggio di benvenuto al rientro
-                  </p>
-                </div>
-              </div>
-
-              <div class="border-l-4 border-purple-500 pl-6">
-                <h4 class="text-lg font-semibold text-slate-800 mb-3">
-                  <i class="fas fa-thumbs-up text-purple-500 mr-2"></i>
-                  Conferma Semplice
-                </h4>
-                <p class="text-slate-600">
-                  Il paziente può confermare la ricezione del messaggio con una risposta vocale, la pressione del pulsante di chiamata o un gesto rilevato da sensori.
-                </p>
+              <div class="bg-green-50 p-4 rounded-lg text-center">
+                <i class="fas fa-exchange-alt text-green-600 text-2xl mb-3"></i>
+                <h4 class="font-semibold text-slate-800 mb-2">Integrazione con AI</h4>
+                <p class="text-sm text-slate-600">API bidirezionale: AI invia alert, Aeolus si dirige verso area e notifica</p>
               </div>
             </div>
-          </div>
 
-          <div class="solution-card" id="integrata-supporto">
-            <h3 class="serif text-2xl font-bold">4.3 Funzionalità di Supporto al Personale Infermieristico</h3>
-
-            <div class="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 class="text-lg font-semibold text-slate-800 mb-4">
-                  <i class="fas fa-bell text-red-600 mr-2"></i>
-                  Notifiche Contestuali
-                </h4>
-                <p class="text-slate-600 mb-4">
-                  Notifiche specifiche al centralino con informazioni contestuali, non solo &#34;allarme stanza 12&#34; ma dettagli sul tipo di promemoria mancato.
-                </p>
-
-                <h4 class="text-lg font-semibold text-slate-800 mb-4">
-                  <i class="fas fa-tachometer-alt text-amber-600 mr-2"></i>
-                  Riduzione Carico di Lavoro
-                </h4>
-                <p class="text-slate-600">
-                  Automatizzazione delle comunicazioni di routine (promemoria farmaci, appuntamenti) libera tempo del personale per compiti che richiedono competenza clinica.
-                </p>
-              </div>
-
-              <div>
-                <h4 class="text-lg font-semibold text-slate-800 mb-4">
-                  <i class="fas fa-eye text-indigo-600 mr-2"></i>
-                  Monitoraggio Passivo
-                </h4>
-                <p class="text-slate-600 mb-4">
-                  Sensori ambientali forniscono informazioni preziose sullo stato di benessere del paziente, come periodi di inattività insolitamente lunghi o agitazione notturna.
-                </p>
-
-                <div class="bg-indigo-50 p-4 rounded-lg">
-                  <h5 class="font-semibold text-indigo-800 mb-2">Vantaggi Principali</h5>
-                  <ul class="text-sm text-indigo-700 space-y-1">
-                    <li>• Integrazione con infrastruttura esistente</li>
-                    <li>• Nessun dispositivo aggiuntivo per il paziente</li>
-                    <li>• Comunicazioni automatizzate</li>
-                    <li>• Monitoraggio proattivo</li>
-                  </ul>
-                </div>
-              </div>
+            <div class="highlight-box">
+              <p class="text-slate-700">
+                <strong>Copertura completa:</strong> le soluzioni di monitoraggio oggi sul mercato coprono tipicamente solo la stanza del residente con sensori fissi. Aeolus copre corridoi, mensa, giardino, aree comuni &mdash; ovunque il residente si muova. In combinazione con AmicoMed AI (Follow-Me AI), il residente &egrave; accompagnato in tutta la struttura.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="solution-card" id="integrata-classificazione">
-            <h3 class="serif text-2xl font-bold">4.4 Giustificazione della Classificazione MDR</h3>
+      <!-- AmicoMed Edge Section -->
+      <section class="section-spacing bg-white" id="amicomed-edge">
+        <div class="container mx-auto px-8">
+          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">5. AmicoMed Edge: Erogazione Farmaci Automatizzata</h2>
 
-            <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-              <h4 class="text-lg font-semibold text-green-800 mb-3">
-                <i class="fas fa-check-circle text-green-600 mr-2"></i>
-                Classificazione MDR di Classe I Confermata
+          <div class="solution-card edge-card">
+            <p class="text-slate-600 mb-6">
+              Dispositivo medico MDR Classe IIa (Regola 10/11) per l'erogazione automatizzata di farmaci in bustine monodose. Microcontrollore STM32H7, dual QR reader per identificazione paziente e farmaco, audit trail crittografico (SHA-256 + ECDSA). La certificazione richiede coinvolgimento di un Notified Body e un percorso di 18-24 mesi.
+            </p>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
+              <h4 class="text-lg font-semibold text-red-800 mb-3">
+                <i class="fas fa-gavel mr-2"></i>
+                Classificazione MDR Classe IIa
               </h4>
               <div class="grid md:grid-cols-3 gap-4">
                 <div>
-                  <h5 class="font-semibold text-green-700 mb-2">Accessorio Software</h5>
-                  <p class="text-sm text-green-600">Modulo aggiuntivo a sistema di chiamata di Classe I</p>
+                  <h5 class="font-semibold text-red-700 mb-2">Notified Body</h5>
+                  <p class="text-sm text-red-600">Richiesto. Documentazione tecnica completa, QMS ISO 13485, clinical evaluation.</p>
                 </div>
                 <div>
-                  <h5 class="font-semibold text-green-700 mb-2">Informazioni Non Cliniche</h5>
-                  <p class="text-sm text-green-600">Fornisce informazioni supplementari, non dati clinici in tempo reale</p>
+                  <h5 class="font-semibold text-red-700 mb-2">Timeline</h5>
+                  <p class="text-sm text-red-600">18-24 mesi per certificazione + industrializzazione. Rischio di upgrade a Classe IIb da valutare.</p>
                 </div>
                 <div>
-                  <h5 class="font-semibold text-green-700 mb-2">Nessuna Interferenza</h5>
-                  <p class="text-sm text-green-600">Non influenza le funzioni di sicurezza del sistema principale</p>
+                  <h5 class="font-semibold text-red-700 mb-2">Separazione da AI</h5>
+                  <p class="text-sm text-red-600">L'integrazione con AmicoMed AI non deve contaminare la classificazione. API con separazione netta.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workflow Integrato -->
+          <div class="solution-card edge-card" id="edge-workflow">
+            <h3 class="serif text-2xl font-bold" style="color: #dc2626;">5.1 Workflow Integrato AI + Edge</h3>
+            <p class="text-slate-600 mb-6">
+              Quando AmicoMed Edge sar&agrave; operativo (Fase 3), i due sistemi lavoreranno in coordinamento per l'erogazione farmaci. La separazione regolatoria &egrave; assoluta: l'AI notifica e interagisce, ma non decide e non controlla il dispensing.
+            </p>
+
+            <div class="my-8 bg-gray-50 p-6 rounded-lg">
+              <div class="mermaid-container">
+                <div class="mermaid-controls">
+                  <button class="mermaid-control-btn zoom-in" title="Ingrandisci"><i class="fas fa-search-plus"></i></button>
+                  <button class="mermaid-control-btn zoom-out" title="Riduci"><i class="fas fa-search-minus"></i></button>
+                  <button class="mermaid-control-btn reset-zoom" title="Reimposta"><i class="fas fa-expand-arrows-alt"></i></button>
+                </div>
+                <div class="mermaid">
+                  flowchart TD
+                  T1["T-15 min<br/>AI notifica paziente<br/>vocalmente"] --> T2["T-5 min<br/>AI verifica<br/>paziente in stanza"]
+                  T2 --> T3["T-0<br/>Doppia autenticazione<br/>Voice Print + QR"]
+                  T3 --> T4["Erogazione<br/>EDGE eroga bustina<br/>AI non interviene"]
+                  T4 --> T5["T+5 min<br/>AI chiede conferma<br/>vocale"]
+                  T5 --> T6{Conferma?}
+                  T6 -->|Si| T7["Log completato<br/>Due audit trail separati"]
+                  T6 -->|No / Timeout| T8["Alert operatore<br/>Priorita alta"]
+                  T8 --> T9["Escalation<br/>se non preso in carico"]
+
+                  style T1 fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e293b
+                  style T2 fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e293b
+                  style T3 fill:#f3e5f5,stroke:#7c3aed,stroke-width:2px,color:#1e293b
+                  style T4 fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#1e293b
+                  style T5 fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e293b
+                  style T6 fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#1e293b
+                  style T7 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#1e293b
+                  style T8 fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#1e293b
+                  style T9 fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#1e293b
                 </div>
               </div>
             </div>
 
-            <p class="text-slate-600">
-              L&#39;AI Amicomed funziona come accessorio a un sistema esistente di Classe I, fornendo funzionalità supplementari senza modificare le funzioni di sicurezza del dispositivo principale. Questo posizionamento è perfettamente allineato con i requisiti per la classificazione di Classe I.
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-blue-50 p-5 rounded-lg">
+                <h4 class="font-semibold text-blue-800 mb-2">AI &rarr; Edge (informativo)</h4>
+                <p class="text-sm text-blue-700">"Il paziente &egrave; disponibile" &mdash; l'AI informa, non decide. Edge pu&ograve; operare anche senza AI.</p>
+              </div>
+              <div class="bg-red-50 p-5 rounded-lg">
+                <h4 class="font-semibold text-red-800 mb-2">Edge &rarr; AI (notifica)</h4>
+                <p class="text-sm text-red-700">"Erogazione completata/fallita" &mdash; Edge notifica, non comanda. I due audit trail sono separati ma correlabili.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture Section -->
+      <section class="section-spacing bg-slate-50" id="architettura">
+        <div class="container mx-auto px-8">
+          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">6. Architettura Tecnica: Edge-First</h2>
+
+          <div class="solution-card">
+            <p class="text-slate-600 mb-6">
+              L'architettura &egrave; edge-first: un server GPU locale in ogni RSA gestisce il 90% del processing. Il cloud riceve solo analytics anonimizzati (opt-in). Il sistema funziona al 100% offline.
             </p>
+
+            <div class="grid md:grid-cols-4 gap-6 mb-8">
+              <div class="bg-slate-50 p-4 rounded-lg text-center">
+                <i class="fas fa-server text-indigo-600 text-2xl mb-3"></i>
+                <h4 class="font-semibold text-slate-800 mb-1 text-sm">Server Edge</h4>
+                <p class="text-xs text-slate-600">GPU per AI locale, storage crittografato 2TB NVMe, WiFi 6E/5G</p>
+              </div>
+              <div class="bg-slate-50 p-4 rounded-lg text-center">
+                <i class="fas fa-tablet-alt text-indigo-600 text-2xl mb-3"></i>
+                <h4 class="font-semibold text-slate-800 mb-1 text-sm">Tablet Bedside</h4>
+                <p class="text-xs text-slate-600">10", speaker integrato, per ogni residente. Consumer in Fase 1.</p>
+              </div>
+              <div class="bg-slate-50 p-4 rounded-lg text-center">
+                <i class="fas fa-mobile-alt text-indigo-600 text-2xl mb-3"></i>
+                <h4 class="font-semibold text-slate-800 mb-1 text-sm">App Staff</h4>
+                <p class="text-xs text-slate-600">iOS/Android su BYOD. Alert, dashboard, documentazione.</p>
+              </div>
+              <div class="bg-slate-50 p-4 rounded-lg text-center">
+                <i class="fas fa-lock text-indigo-600 text-2xl mb-3"></i>
+                <h4 class="font-semibold text-slate-800 mb-1 text-sm">Privacy by Design</h4>
+                <p class="text-xs text-slate-600">AES-256 at rest, TLS 1.3 in transit, DPIA, consenso multi-livello.</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="highlight-box" style="margin: 0;">
+                <h4 class="font-semibold text-slate-800 mb-2">Processing 90/10</h4>
+                <p class="text-sm text-slate-600"><strong>Locale (90%):</strong> voice recognition, intent, emotion, comandi, alert, documentazione, report</p>
+                <p class="text-sm text-slate-600"><strong>Cloud (10%):</strong> population analytics anonimizzati, model training, benchmarking cross-struttura</p>
+              </div>
+              <div class="highlight-box" style="margin: 0;">
+                <h4 class="font-semibold text-slate-800 mb-2">Performance Target</h4>
+                <p class="text-sm text-slate-600"><strong>Latenza:</strong> &lt;300ms end-to-end per interazioni vocali</p>
+                <p class="text-sm text-slate-600"><strong>Offline:</strong> 100% funzionalit&agrave; core senza connessione</p>
+                <p class="text-sm text-slate-600"><strong>WER:</strong> &lt;8% su italiano standard voce anziana sana</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Integrazioni Section -->
+      <section class="section-spacing bg-white" id="integrazioni">
+        <div class="container mx-auto px-8">
+          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">7. Integrazioni: Cartella Clinica e FSE</h2>
+
+          <div class="solution-card">
+            <h3 class="serif text-2xl font-bold">Cartella Clinica Elettronica RSA</h3>
+            <p class="text-slate-600 mb-6">
+              Il panorama IT delle RSA italiane &egrave; frammentato (Zucchetti, Dedalus, GPI, Engineering, e molti altri). L'integrazione segue una strategia progressiva.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+              <div class="bg-blue-50 p-4 rounded-lg border-t-4 border-blue-400">
+                <h4 class="font-semibold text-slate-800 mb-2 text-sm">Fase 1: Standalone</h4>
+                <p class="text-xs text-slate-600">Import CSV/Excel anagrafica e piano terapeutico. Export report PDF/CSV inseribili manualmente nel gestionale.</p>
+              </div>
+              <div class="bg-green-50 p-4 rounded-lg border-t-4 border-green-400">
+                <h4 class="font-semibold text-slate-800 mb-2 text-sm">Fase 2: API Adapter</h4>
+                <p class="text-xs text-slate-600">Connettori per i 2-3 gestionali pi&ugrave; diffusi tra le RSA pilota. Sincronizzazione anagrafica e piano terapeutico.</p>
+              </div>
+              <div class="bg-purple-50 p-4 rounded-lg border-t-4 border-purple-400">
+                <h4 class="font-semibold text-slate-800 mb-2 text-sm">Fase 3: HL7 FHIR R4</h4>
+                <p class="text-xs text-slate-600">Integrazione bidirezionale real-time. Risorse FHIR: Patient, Observation, MedicationRequest, CarePlan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="solution-card">
+            <h3 class="serif text-2xl font-bold">Fascicolo Sanitario Elettronico (FSE 2.0)</h3>
+            <p class="text-slate-600 mb-4">
+              Il FSE 2.0 (PNRR M6C2) prevede l'alimentazione automatica da sistemi terzi certificati. L'integrazione &egrave; un obiettivo futuro (Fase 3+) ma strategicamente importante: richiede accreditamento regionale, processo lungo. Se raggiunta, rappresenta un differenziatore competitivo significativo rispetto alle soluzioni oggi disponibili sul mercato.
+            </p>
+            <div class="warning-box" style="margin-bottom: 0;">
+              <p class="text-sm text-amber-800">
+                <i class="fas fa-info-circle mr-2"></i>
+                I dati che AmicoMed scrive nel FSE devono restare nel perimetro non-clinico (engagement, aderenza) per non attivare vincoli MDR.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roadmap Section -->
+      <section class="section-spacing bg-slate-50" id="roadmap">
+        <div class="container mx-auto px-8">
+          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">8. Roadmap</h2>
+
+          <div class="solution-card">
+            <div class="phase-timeline">
+              <div class="phase-item phase-1">
+                <h4 class="text-lg font-bold text-blue-700 mb-2">Fase 1 &mdash; Mesi 0-6: MVP e Pilota</h4>
+                <p class="text-slate-600 mb-3">AmicoMed AI su tablet commerciale in 2-3 RSA pilota. Obiettivo: dimostrare valore in 60 giorni.</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="text-sm text-slate-600">
+                    <p class="font-semibold mb-1">Moduli attivi:</p>
+                    <p>Companion vocale (italiano standard), stimolazione cognitiva, reminder farmaci vocale, documentazione automatica, report famiglie, alert base, dashboard coordinatore</p>
+                  </div>
+                  <div class="text-sm text-slate-600">
+                    <p class="font-semibold mb-1">Modello commerciale:</p>
+                    <p>SaaS &#8364;15-25/letto/mese. Include tablet, server edge, setup, training staff, supporto.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="phase-item phase-2">
+                <h4 class="text-lg font-bold text-green-700 mb-2">Fase 2 &mdash; Mesi 6-12: Aeolus + Evoluzione AI</h4>
+                <p class="text-slate-600 mb-3">Integrazione robot Aeolus in RSA. Biomarker vocali (se dataset sufficiente). Follow-Me AI. Supporto dialetti incrementale.</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="text-sm text-slate-600">
+                    <p class="font-semibold mb-1">Nuove capability:</p>
+                    <p>Sorveglianza spazi comuni, alert wandering, dashboard avanzata con KPI gestionali, primi biomarker vocali</p>
+                  </div>
+                  <div class="text-sm text-slate-600">
+                    <p class="font-semibold mb-1">Modello commerciale:</p>
+                    <p>SaaS + RaaS &#8364;800-1200/robot/mese. Bundle AI+Robot per la piattaforma completa.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="phase-item phase-3">
+                <h4 class="text-lg font-bold text-red-700 mb-2">Fase 3 &mdash; Mesi 18-24: Edge + Piattaforma Integrata</h4>
+                <p class="text-slate-600 mb-3">Certificazione e deployment AmicoMed Edge. Workflow erogazione coordinata AI+Edge. KPI compositi multi-sorgente.</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="text-sm text-slate-600">
+                    <p class="font-semibold mb-1">Nuove capability:</p>
+                    <p>Erogazione automatizzata farmaci, audit trail crittografico, predittivit&agrave; aderenza avanzata, integrazione HL7 FHIR</p>
+                  </div>
+                  <div class="text-sm text-slate-600">
+                    <p class="font-semibold mb-1">Modello commerciale:</p>
+                    <p>Piattaforma completa &#8364;55-90/letto/mese (AI + Robot + Edge). Subscription MedTech per il dispenser.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Commercial Model -->
+      <section class="section-spacing bg-white" id="commerciale">
+        <div class="container mx-auto px-8">
+          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">9. Modello Commerciale</h2>
+
+          <div class="solution-card">
+            <p class="text-slate-600 mb-6">
+              Il modello &egrave; SaaS per-bed, scalabile con la piattaforma. Ogni fase aggiunge un livello di revenue. I prezzi sono stime pre-validazione &mdash; verranno calibrati durante i pilota.
+            </p>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead>
+                  <tr class="border-b-2 border-slate-300">
+                    <th class="py-3 px-4 font-semibold text-slate-800">Prodotto</th>
+                    <th class="py-3 px-4 font-semibold text-slate-800">Modello</th>
+                    <th class="py-3 px-4 font-semibold text-slate-800">Range Prezzo</th>
+                    <th class="py-3 px-4 font-semibold text-slate-800">Include</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-slate-200">
+                    <td class="py-3 px-4"><span class="inline-block w-3 h-3 bg-blue-600 rounded-full mr-2"></span>AmicoMed AI</td>
+                    <td class="py-3 px-4">SaaS</td>
+                    <td class="py-3 px-4">&#8364;15-25/letto/mese</td>
+                    <td class="py-3 px-4 text-slate-600">Tablet, server edge, setup, training, supporto</td>
+                  </tr>
+                  <tr class="border-b border-slate-200">
+                    <td class="py-3 px-4"><span class="inline-block w-3 h-3 bg-green-600 rounded-full mr-2"></span>Aeolus</td>
+                    <td class="py-3 px-4">RaaS</td>
+                    <td class="py-3 px-4">&#8364;800-1200/robot/mese</td>
+                    <td class="py-3 px-4 text-slate-600">Robot, manutenzione, aggiornamenti SW</td>
+                  </tr>
+                  <tr class="border-b border-slate-200">
+                    <td class="py-3 px-4"><span class="inline-block w-3 h-3 bg-red-600 rounded-full mr-2"></span>AmicoMed Edge</td>
+                    <td class="py-3 px-4">MedTech Sub.</td>
+                    <td class="py-3 px-4">&#8364;30-45/letto/mese</td>
+                    <td class="py-3 px-4 text-slate-600">Dispenser, bustine, manutenzione, certificazione</td>
+                  </tr>
+                  <tr class="bg-slate-50">
+                    <td class="py-3 px-4 font-semibold"><span class="inline-block w-3 h-3 bg-purple-600 rounded-full mr-2"></span>Piattaforma completa</td>
+                    <td class="py-3 px-4 font-semibold">Tiered</td>
+                    <td class="py-3 px-4 font-semibold">&#8364;55-90/letto/mese</td>
+                    <td class="py-3 px-4 text-slate-600">Tutto integrato, pricing scontato</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="warning-box mt-6">
+              <p class="text-sm text-amber-800">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                Tutti i prezzi sono stime pre-validazione. Verranno calibrati sulla base dei risultati dei pilota e del feedback dei primi clienti. Il costo di un OSS per le RSA &egrave; nell'ordine di &#8364;28.000-32.000/anno: il ROI del sistema deve essere dimostrabile in termini di tempo risparmiato e qualit&agrave; dell'assistenza.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Risks Section -->
+      <section class="section-spacing bg-slate-50" id="rischi">
+        <div class="container mx-auto px-8">
+          <h2 class="serif text-4xl font-bold text-slate-800 mb-8">10. Rischi e Mitigazioni</h2>
+
+          <div class="solution-card">
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div class="bg-red-100 p-2 rounded-full shrink-0"><i class="fas fa-exclamation text-red-600 text-sm"></i></div>
+                <div>
+                  <h4 class="font-semibold text-slate-800">Classe IIa Edge: tempi e costi certificazione</h4>
+                  <p class="text-sm text-slate-600">Rischio ALTO. Richiede Notified Body, documentazione completa, possibile upgrade a IIb. Mitigazione: avviare il percorso in parallelo, non attendere il completamento di AI.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="bg-red-100 p-2 rounded-full shrink-0"><i class="fas fa-exclamation text-red-600 text-sm"></i></div>
+                <div>
+                  <h4 class="font-semibold text-slate-800">Dataset vocale geriatrico insufficiente</h4>
+                  <p class="text-sm text-slate-600">Rischio ALTO. La raccolta &egrave; appena iniziata. I modelli di biomarker e predittivit&agrave; dipendono dalla maturazione del dataset. Mitigazione: il modulo engagement funziona gi&agrave; e non richiede dataset maturo; la raccolta avviene durante i pilota.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="bg-amber-100 p-2 rounded-full shrink-0"><i class="fas fa-exclamation text-amber-600 text-sm"></i></div>
+                <div>
+                  <h4 class="font-semibold text-slate-800">AI che supera il confine MDR</h4>
+                  <p class="text-sm text-slate-600">Rischio MEDIO. Se l'AI fa claim cognitivi o terapeutici, rientra in MDR. Mitigazione: guardrail tecnici nell'architettura software, intended use documentato per ogni componente, review periodico.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="bg-amber-100 p-2 rounded-full shrink-0"><i class="fas fa-exclamation text-amber-600 text-sm"></i></div>
+                <div>
+                  <h4 class="font-semibold text-slate-800">Necessit&agrave; di funding</h4>
+                  <p class="text-sm text-slate-600">Rischio MEDIO. I primi 18-24 mesi richiedono capitale per sviluppo, certificazione Edge, pilota. La Classe IIa allunga i tempi rispetto a un percorso solo software. Mitigazione: AmicoMed AI genera revenue gi&agrave; dalla Fase 1.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="bg-yellow-100 p-2 rounded-full shrink-0"><i class="fas fa-info text-yellow-600 text-sm"></i></div>
+                <div>
+                  <h4 class="font-semibold text-slate-800">Competizione e nuovi entranti</h4>
+                  <p class="text-sm text-slate-600">Rischio da monitorare. Il mercato attrae investimenti e nuovi player. Mitigazione: AmicoMed si posiziona su aree non coperte dalle soluzioni esistenti (voce, interazione, farmaci, copertura spazi comuni). Il posizionamento &egrave; complementare, non sostitutivo.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1040,42 +1136,35 @@
       <section class="section-spacing bg-slate-800 text-white">
         <div class="container mx-auto px-8">
           <div class="max-w-4xl mx-auto text-center">
-            <h2 class="serif text-3xl font-bold mb-8">Conclusioni e Prospettive Future</h2>
+            <h2 class="serif text-3xl font-bold mb-8">Prossimi Passi</h2>
 
             <div class="grid md:grid-cols-3 gap-8 mb-12">
               <div class="bg-slate-700 p-6 rounded-lg">
-                <i class="fas fa-shield-alt text-green-400 text-2xl mb-4"></i>
-                <h3 class="font-semibold mb-3">Conformità Regolatoria</h3>
-                <p class="text-sm text-slate-300">Tutte e tre le soluzioni mantengono la classificazione MDR di Classe I, garantendo un percorso di conformità semplificato</p>
+                <i class="fas fa-code text-blue-400 text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">Sviluppo SW</h3>
+                <p class="text-sm text-slate-300">Specifica completa per la SW house in corso. Copertura dalla A alla Z: architettura, moduli, vincoli, testing, integrazioni.</p>
               </div>
               <div class="bg-slate-700 p-6 rounded-lg">
-                <i class="fas fa-users text-blue-400 text-2xl mb-4"></i>
-                <h3 class="font-semibold mb-3">Benefici per Pazienti</h3>
-                <p class="text-sm text-slate-300">Miglioramento dell&#39;aderenza terapeutica, supporto emotivo e maggiore coinvolgimento nel percorso di cura</p>
+                <i class="fas fa-hospital text-green-400 text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">Pilota RSA</h3>
+                <p class="text-sm text-slate-300">Identificare 2-3 RSA pilota. Definire metriche di successo a 60 giorni. Avviare raccolta dataset vocale.</p>
               </div>
               <div class="bg-slate-700 p-6 rounded-lg">
-                <i class="fas fa-user-nurse text-purple-400 text-2xl mb-4"></i>
-                <h3 class="font-semibold mb-3">Supporto al Personale</h3>
-                <p class="text-sm text-slate-300">Riduzione del carico di lavoro, monitoraggio centralizzato e comunicazione efficiente</p>
+                <i class="fas fa-file-contract text-purple-400 text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">Certificazione Edge</h3>
+                <p class="text-sm text-slate-300">Avviare percorso MDR Classe IIa in parallelo. Identificare Notified Body. Preparare documentazione tecnica.</p>
               </div>
             </div>
 
-            <p class="text-lg text-slate-300 mb-8">
-              Le tre soluzioni presentate offrono un ventaglio di opzioni per integrare l&#39;AI Amicomed in ambienti sanitari, ciascuna con caratteristiche distintive che la rendono adatta a contesti specifici. La chiave del successo regolatorio risiede nella precisa definizione della finalità d&#39;uso e nella progettazione attenta a non superare i confini delle funzioni di Classe I.
+            <p class="text-sm text-slate-400 mt-8">
+              Documento riservato &mdash; CLAP Srl &mdash; Redatto da Amedeo Esposito &mdash; Aprile 2026
             </p>
-
-            <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6 rounded-lg">
-              <p class="text-lg font-semibold">
-                &#34;L&#39;innovazione in ambito sanitario richiede un equilibrio tra progresso tecnologico e conformità regolatoria. Queste soluzioni dimostrano che è possibile integrare l&#39;AI mantenendo standard di sicurezza elevati e percorsi di conformità accessibili.&#34;
-              </p>
-            </div>
           </div>
         </div>
       </section>
     </main>
 
     <script>
-        // Initialize Mermaid
         mermaid.initialize({
             startOnLoad: true,
             theme: 'base',
@@ -1088,19 +1177,7 @@
                 tertiaryColor: '#e8f5e8',
                 background: '#ffffff',
                 mainBkg: '#ffffff',
-                secondBkg: '#f8fafc',
-                tertiaryBkg: '#f1f5f9',
-                // Enhanced contrast colors for different node types
-                primaryTextColor: '#1f2937',
-                secondaryTextColor: '#374151',
-                tertiaryTextColor: '#6b7280',
-                // Node background colors with good contrast
-                cScale0: '#e3f2fd',
-                cScale1: '#e8f5e8', 
-                cScale2: '#fff3e0',
-                cScale3: '#f3e5f5',
-                cScale4: '#fce4ec',
-                cScale5: '#f1f8e9'
+                fontFamily: 'Inter, sans-serif'
             },
             flowchart: {
                 useMaxWidth: false,
@@ -1112,330 +1189,82 @@
             fontFamily: 'Inter, sans-serif'
         });
 
-        // Initialize Mermaid Controls for zoom and pan
         function initializeMermaidControls() {
             const containers = document.querySelectorAll('.mermaid-container');
-
             containers.forEach(container => {
-            const mermaidElement = container.querySelector('.mermaid');
-            let scale = 1;
-            let isDragging = false;
-            let startX, startY, translateX = 0, translateY = 0;
+                const mermaidElement = container.querySelector('.mermaid');
+                let scale = 1;
+                let isDragging = false;
+                let startX, startY, translateX = 0, translateY = 0;
 
-            // 触摸相关状态
-            let isTouch = false;
-            let touchStartTime = 0;
-            let initialDistance = 0;
-            let initialScale = 1;
-            let isPinching = false;
-
-            // Zoom controls
-            const zoomInBtn = container.querySelector('.zoom-in');
-            const zoomOutBtn = container.querySelector('.zoom-out');
-            const resetBtn = container.querySelector('.reset-zoom');
-            const fullscreenBtn = container.querySelector('.fullscreen');
-
-            function updateTransform() {
-                mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-
-                if (scale > 1) {
-                container.classList.add('zoomed');
-                } else {
-                container.classList.remove('zoomed');
+                function updateTransform() {
+                    mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                    mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
                 }
 
-                mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
-            }
+                const zoomInBtn = container.querySelector('.zoom-in');
+                const zoomOutBtn = container.querySelector('.zoom-out');
+                const resetBtn = container.querySelector('.reset-zoom');
 
-            if (zoomInBtn) {
-                zoomInBtn.addEventListener('click', () => {
-                scale = Math.min(scale * 1.25, 4);
-                updateTransform();
+                if (zoomInBtn) zoomInBtn.addEventListener('click', () => { scale = Math.min(scale * 1.25, 4); updateTransform(); });
+                if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => { scale = Math.max(scale / 1.25, 0.3); if (scale <= 1) { translateX = 0; translateY = 0; } updateTransform(); });
+                if (resetBtn) resetBtn.addEventListener('click', () => { scale = 1; translateX = 0; translateY = 0; updateTransform(); });
+
+                mermaidElement.addEventListener('mousedown', (e) => { isDragging = true; startX = e.clientX - translateX; startY = e.clientY - translateY; updateTransform(); e.preventDefault(); });
+                document.addEventListener('mousemove', (e) => { if (isDragging) { translateX = e.clientX - startX; translateY = e.clientY - startY; updateTransform(); } });
+                document.addEventListener('mouseup', () => { isDragging = false; updateTransform(); });
+
+                container.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                    const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+                    if (newScale !== scale) { scale = newScale; if (scale <= 1) { translateX = 0; translateY = 0; } updateTransform(); }
                 });
-            }
-
-            if (zoomOutBtn) {
-                zoomOutBtn.addEventListener('click', () => {
-                scale = Math.max(scale / 1.25, 0.3);
-                if (scale <= 1) {
-                    translateX = 0;
-                    translateY = 0;
-                }
-                updateTransform();
-                });
-            }
-
-            if (resetBtn) {
-                resetBtn.addEventListener('click', () => {
-                scale = 1;
-                translateX = 0;
-                translateY = 0;
-                updateTransform();
-                });
-            }
-
-            if (fullscreenBtn) {
-                fullscreenBtn.addEventListener('click', () => {
-                if (container.requestFullscreen) {
-                    container.requestFullscreen();
-                } else if (container.webkitRequestFullscreen) {
-                    container.webkitRequestFullscreen();
-                } else if (container.msRequestFullscreen) {
-                    container.msRequestFullscreen();
-                }
-                });
-            }
-
-            // Mouse Events
-            mermaidElement.addEventListener('mousedown', (e) => {
-                if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
-
-                isDragging = true;
-                startX = e.clientX - translateX;
-                startY = e.clientY - translateY;
-                mermaidElement.style.cursor = 'grabbing';
-                updateTransform();
-                e.preventDefault();
-            });
-
-            document.addEventListener('mousemove', (e) => {
-                if (isDragging && !isTouch) {
-                translateX = e.clientX - startX;
-                translateY = e.clientY - startY;
-                updateTransform();
-                }
-            });
-
-            document.addEventListener('mouseup', () => {
-                if (isDragging && !isTouch) {
-                isDragging = false;
-                mermaidElement.style.cursor = 'grab';
-                updateTransform();
-                }
-            });
-
-            document.addEventListener('mouseleave', () => {
-                if (isDragging && !isTouch) {
-                isDragging = false;
-                mermaidElement.style.cursor = 'grab';
-                updateTransform();
-                }
-            });
-
-            // 获取两点之间的距离
-            function getTouchDistance(touch1, touch2) {
-                return Math.hypot(
-                touch2.clientX - touch1.clientX,
-                touch2.clientY - touch1.clientY
-                );
-            }
-
-            // Touch Events - 触摸事件处理
-            mermaidElement.addEventListener('touchstart', (e) => {
-                isTouch = true;
-                touchStartTime = Date.now();
-
-                if (e.touches.length === 1) {
-                // 单指拖动
-                isPinching = false;
-                isDragging = true;
-
-                const touch = e.touches[0];
-                startX = touch.clientX - translateX;
-                startY = touch.clientY - translateY;
-
-                } else if (e.touches.length === 2) {
-                // 双指缩放
-                isPinching = true;
-                isDragging = false;
-
-                const touch1 = e.touches[0];
-                const touch2 = e.touches[1];
-                initialDistance = getTouchDistance(touch1, touch2);
-                initialScale = scale;
-                }
-
-                e.preventDefault();
-            }, { passive: false });
-
-            mermaidElement.addEventListener('touchmove', (e) => {
-                if (e.touches.length === 1 && isDragging && !isPinching) {
-                // 单指拖动
-                const touch = e.touches[0];
-                translateX = touch.clientX - startX;
-                translateY = touch.clientY - startY;
-                updateTransform();
-
-                } else if (e.touches.length === 2 && isPinching) {
-                // 双指缩放
-                const touch1 = e.touches[0];
-                const touch2 = e.touches[1];
-                const currentDistance = getTouchDistance(touch1, touch2);
-
-                if (initialDistance > 0) {
-                    const newScale = Math.min(Math.max(
-                    initialScale * (currentDistance / initialDistance),
-                    0.3
-                    ), 4);
-                    scale = newScale;
-                    updateTransform();
-                }
-                }
-
-                e.preventDefault();
-            }, { passive: false });
-
-            mermaidElement.addEventListener('touchend', (e) => {
-                // 重置状态
-                if (e.touches.length === 0) {
-                isDragging = false;
-                isPinching = false;
-                initialDistance = 0;
-
-                // 延迟重置isTouch，避免鼠标事件立即触发
-                setTimeout(() => {
-                    isTouch = false;
-                }, 100);
-                } else if (e.touches.length === 1 && isPinching) {
-                // 从双指变为单指，切换为拖动模式
-                isPinching = false;
-                isDragging = true;
-
-                const touch = e.touches[0];
-                startX = touch.clientX - translateX;
-                startY = touch.clientY - translateY;
-                }
 
                 updateTransform();
-            });
-
-            mermaidElement.addEventListener('touchcancel', (e) => {
-                isDragging = false;
-                isPinching = false;
-                initialDistance = 0;
-
-                setTimeout(() => {
-                isTouch = false;
-                }, 100);
-
-                updateTransform();
-            });
-
-            // Enhanced wheel zoom with better center point handling
-            container.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                const rect = container.getBoundingClientRect();
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-
-                const delta = e.deltaY > 0 ? 0.9 : 1.1;
-                const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
-
-                // Adjust translation to zoom towards center
-                if (newScale !== scale) {
-                const scaleDiff = newScale / scale;
-                translateX = translateX * scaleDiff;
-                translateY = translateY * scaleDiff;
-                scale = newScale;
-
-                if (scale <= 1) {
-                    translateX = 0;
-                    translateY = 0;
-                }
-
-                updateTransform();
-                }
-            });
-
-            // Initialize display
-            updateTransform();
             });
         }
 
-        // Initialize mermaid controls after mermaid renders
         setTimeout(initializeMermaidControls, 1000);
 
-        // Table of Contents functionality
         function toggleTOC() {
             const toc = document.getElementById('toc');
             const backdrop = document.getElementById('toc-backdrop');
             const isOpen = toc.classList.toggle('open');
-            
-            if (isOpen) {
-                backdrop.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            } else {
-                backdrop.classList.add('hidden');
-                document.body.style.overflow = ''; // Restore scrolling
-            }
+            if (isOpen) { backdrop.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+            else { backdrop.classList.add('hidden'); document.body.style.overflow = ''; }
         }
 
-        // Close TOC when clicking outside (on the backdrop)
-        document.getElementById('toc-backdrop').addEventListener('click', function() {
-            toggleTOC();
-        });
+        document.getElementById('toc-backdrop').addEventListener('click', toggleTOC);
 
-        // Close TOC when a TOC link is clicked (on small screens)
-        document.querySelectorAll('.toc-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 1024) {
-                    toggleTOC();
-                }
-            });
-        });
-
-        // Smooth scrolling for TOC links
         document.querySelectorAll('.toc-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (window.innerWidth < 1024) toggleTOC();
             });
         });
 
-        // Active TOC link highlighting
         function updateActiveTOC() {
             const sections = document.querySelectorAll('section[id], div[id]');
-            const tocLinks = document.querySelectorAll('.toc-link');
-            
             let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            tocLinks.forEach(link => {
+            sections.forEach(section => { if (window.scrollY >= section.offsetTop - 100) current = section.getAttribute('id'); });
+            document.querySelectorAll('.toc-link').forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
+                if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
             });
         }
 
         window.addEventListener('scroll', updateActiveTOC);
-        updateActiveTOC(); // Initial call
+        updateActiveTOC();
 
-        // Close TOC when resizing to large screen
         window.addEventListener('resize', function() {
-            const toc = document.getElementById('toc');
-            const backdrop = document.getElementById('toc-backdrop');
-            
             if (window.innerWidth >= 1024) {
-                toc.classList.remove('open');
-                backdrop.classList.add('hidden');
-                document.body.style.overflow = ''; // Restore scrolling
+                document.getElementById('toc').classList.remove('open');
+                document.getElementById('toc-backdrop').classList.add('hidden');
+                document.body.style.overflow = '';
             }
         });
     </script>
-  
-
 </body></html>
