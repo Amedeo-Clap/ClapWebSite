@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded',()=>{
   const b=document.querySelector('.menu-toggle');
   const n=document.querySelector('.main-nav');
@@ -9,7 +8,13 @@ document.addEventListener('DOMContentLoaded',()=>{
     buttons.forEach(btn=>btn.classList.toggle('active',btn.dataset.setlang===lang));
     blocks.forEach(el=>el.classList.toggle('active',el.dataset.lang===lang));
     document.documentElement.lang=lang;
+    try{localStorage.setItem('clap-lang',lang);}catch(e){}
   }
   buttons.forEach(btn=>btn.addEventListener('click',()=>setLang(btn.dataset.setlang)));
-  if(buttons.length){setLang('it');}
+  if(buttons.length){
+    let saved=null;
+    try{saved=localStorage.getItem('clap-lang');}catch(e){}
+    if(saved!=='it'&&saved!=='en'){saved=(navigator.language||'it').toLowerCase().indexOf('it')===0?'it':'en';}
+    setLang(saved);
+  }
 });
